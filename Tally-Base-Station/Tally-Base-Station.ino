@@ -6,8 +6,6 @@
 #include <ATEMmin.h>
 #include <SoftwareSerial.h>
 
-// Enter a MAC address for your controller below.
-// Newer Ethernet shields have a MAC address printed on a sticker on the shield
 // Mega
 //byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x04 };
 //byte ip[] = { 172, 20, 1, 239 };
@@ -16,15 +14,14 @@ byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x03 };
 byte ip[] = { 172, 20, 1, 238 };
 IPAddress switcherIp(172, 20, 1, 240);
 
-#define REMOTE_CAMERA       4
-#define TALENT_DIMMER_PIN   3
-#define TALENT_PREVIEW_PIN  16
-#define OP_DIMMER_PIN       3
-#define LED_COUNT           10
-#define BRIGHTNESS_RATIO    3.5 // For 5kohm
-#define NUMBER_OF_TALLY_LIGHTS  8
-
+#define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
+#define TALENT_DIMMER_PIN   3   // Global brightness pot for front LED
+#define TALENT_PREVIEW_PIN  16  // Toggle displaying preview indicator to talent.
 bool showPreviewToTalent = false;
+#define OP_DIMMER_PIN       3   // Global brightness pot for rear LED
+#define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel for talent (7 LEDs)
+#define BRIGHTNESS_RATIO    3.5 // For 5kohm pots to convert to 8bit
+#define NUMBER_OF_TALLY_LIGHTS  8   // 8 for ATEM Television Studio, 10 for ATEM 1M/E
 
 // Mega
 //Adafruit_NeoPixel tallyUnit[8] = {
@@ -58,8 +55,6 @@ void setup() {
   pinMode(4,OUTPUT);
   digitalWrite(4,HIGH);
   pinMode(TALENT_PREVIEW_PIN, INPUT);
-//  pinMode(2,OUTPUT);
-//  pinMode(3,OUTPUT);
 
   XBee.begin(9600);
   
@@ -91,7 +86,7 @@ void setup() {
     ; // wait for serial port to connect. Needed for native USB port only
   }
 
-  setAllTally(tallyUnit[0].Color(128,128,128));
+  setAllTally(tallyUnit[0].Color(128,0,0));
 
   Serial.println("Initialize Ethernet:");
   lcd.print("Init Ethernet");
@@ -101,19 +96,21 @@ void setup() {
 //  if (Ethernet.begin(mac) == 0) {
 //    lcd.clear();
 //    Serial.println("Failed to configure Ethernet using DHCP");
-////    lcd.setCursor(0,0);
-////    lcd.print("Failed to configure");
-////    lcd.setCursor(0,1);
-////    lcd.print("Ethernet using DHCP");
+//    lcd.setCursor(0,0);
+//    lcd.print("Failed to configure");
+//    lcd.setCursor(0,1);
+//    lcd.print("Ethernet using DHCP");
 //    if (Ethernet.hardwareStatus() == EthernetNoHardware) {
-////      lcd.setCursor(0,2);
-////      lcd.print("Ethernet shield");
-////      lcd.setCursor(0,3);
-////      lcd.print("was not found.");
-//      Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
+//      delay(1000);
+//      lcd.setCursor(0,0);
+//      lcd.print("Ethernet shield");
+//      lcd.setCursor(0,1);
+//      lcd.print("was not found.");
+//      Serial.println("Ethernet shield was not found.");
 //    } else if (Ethernet.linkStatus() == LinkOFF) {
-////      lcd.setCursor(0,2);
-////      lcd.print("Ethernet cable is not connected.");
+//      delay(1000);
+//      lcd.setCursor(0,2);
+//      lcd.print("Ethernet cable is not connected.");
 //      Serial.println("Ethernet cable is not connected.");
 //    }
 //    // no point in carrying on, so do nothing forevermore:
@@ -124,7 +121,7 @@ void setup() {
 
   Serial.println(Ethernet.subnetMask());
   
-  setAllTally(tallyUnit[0].Color(128,0,128));
+  setAllTally(tallyUnit[0].Color(0,128,0));
   
   // print your local IP address:
   Serial.print("My IP address: ");
@@ -139,7 +136,7 @@ void setup() {
   AtemSwitcher.serialOutput(1);
   AtemSwitcher.connect();
 
-  setAllTally(tallyUnit[0].Color(0,255,255));
+  setAllTally(tallyUnit[0].Color(0,0,128));
 
   delay(2000);
 
@@ -151,11 +148,7 @@ void setup() {
 }
 
 void loop() {
-//  Serial.print("Starting Loop! - ");
   AtemSwitcher.runLoop();
-  
-//  uint8_t preview = AtemSwitcher.getPreviewInput();
-//  uint8_t program = AtemSwitcher.getProgramInput();
 
   showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
 
@@ -189,14 +182,10 @@ void loop() {
 //      //nothing happened
 //      break;
 //  }
-
-//  Serial.println("end loop");
   delay(50);
 }
 
 void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
-  opBrightness = (int) opBrightness / 3;
-  
   int tally = AtemSwitcher.getTallyByIndexTallyFlags(camera);
 
   if(camera + 1 == REMOTE_CAMERA) {
