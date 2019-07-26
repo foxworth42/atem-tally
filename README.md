@@ -17,3 +17,5 @@ Overall the system will make use of:
 - 2 potentiometers for setting global brightness on the front and back LED for each tally light
 - Toggle switch to enable/disable displaying the preview indicator on the front of the tally light
 
+Why roll something myself?  Cost, and it's an excuse to learn some C and some PCB design.
+
