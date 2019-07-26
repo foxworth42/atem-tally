@@ -8,7 +8,7 @@ Everything here is still a work in process at the moment.
 Overall the system will make use of:
 
 - Arduino Mega w/ Ethernet
-- Skaarhoj's Open Engineering arduino libraries for communicating with the Black Magic ATEM video switcher
+- [Skaarhoj's Open Engineering arduino libraries](https://github.com/kasperskaarhoj/SKAARHOJ-Open-Engineering/tree/master/ArduinoLibs) for communicating with the Black Magic ATEM video switcher
 - Lots of NeoPixels (added flexability for what we can do with the lights)
 - 16x2 or 20x4 i2c LCD display for displaying system status
 - RS485 tx/rx for long data runs to the cameras
