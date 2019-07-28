@@ -1,7 +1,5 @@
-//#include <SPI.h>
 #include <Ethernet.h>
 #include <Adafruit_NeoPixel.h>
-//#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <ATEMmin.h>
 #include <SoftwareSerial.h>
@@ -15,35 +13,70 @@ byte ip[] = { 172, 20, 1, 238 };
 IPAddress switcherIp(172, 20, 1, 240);
 
 #define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
-#define TALENT_DIMMER_PIN   3   // Global brightness pot for front LED
-#define TALENT_PREVIEW_PIN  16  // Toggle displaying preview indicator to talent.
 bool showPreviewToTalent = false;
-#define OP_DIMMER_PIN       3   // Global brightness pot for rear LED
 #define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel for talent (7 LEDs)
 #define BRIGHTNESS_RATIO    3.5 // For 5kohm pots to convert to 8bit
 #define NUMBER_OF_TALLY_LIGHTS  8   // 8 for ATEM Television Studio, 10 for ATEM 1M/E
 
-// Mega
-//Adafruit_NeoPixel tallyUnit[8] = {
-//  Adafruit_NeoPixel(LED_COUNT, 22, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 23, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 24, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 25, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 26, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 27, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 28, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, 29, NEO_GRB + NEO_KHZ800)
-//};
+// Test unit pin assignments
+#define TALENT_DIMMER_PIN   3   // Global brightness pot for front LED
+#define TALENT_PREVIEW_PIN  16  // Toggle displaying preview indicator to talent.
+#define OP_DIMMER_PIN       3   // Global brightness pot for rear LED
+
 // Uno
+#define CAM1  14
+#define CAM2  15
+#define CAM3  4
+#define CAM4  5
+#define CAM5  6
+#define CAM6  7
+#define CAM7  8
+#define CAM8  9
+
+
+// Mega
+//#define CAM1  22
+//#define CAM2  23
+//#define CAM3  24
+//#define CAM4  25
+//#define CAM5  26
+//#define CAM6  27
+//#define CAM7  28
+//#define CAM8  29
+
+// Controller shield pin assignments
+//#define CAM1  8
+//#define CAM2  7
+//#define CAM3  6
+//#define CAM4  5
+//#define CAM5  26
+//#define CAM6  22
+//#define CAM7  28
+//#define CAM8  24
+//#define CAM9  42
+//#define CAM10 38
+//#define CAM11 44
+//#define CAM12 40
+//#define OP_DIMMER_PIN       A0   // Global brightness pot for rear LED
+//#define TALENT_DIMMER_PIN   A1   // Global brightness pot for front LED
+//#define TALENT_PREVIEW_PIN  A2  // Toggle displaying preview indicator to talent.
+//#define XBEE_In             11
+//#define XBEE_Out            12
+//#define PIXEL               13
+
 Adafruit_NeoPixel tallyUnit[8] = {
-  Adafruit_NeoPixel(LED_COUNT, 14, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 15, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 4, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 5, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 6, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 7, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 8, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, 9, NEO_GRB + NEO_KHZ800)
+  Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM2, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM3, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM4, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM5, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM6, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM7, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM8, NEO_GRB + NEO_KHZ800)
+//  Adafruit_NeoPixel(LED_COUNT, CAM9, NEO_GRB + NEO_KHZ800),
+//  Adafruit_NeoPixel(LED_COUNT, CAM10, NEO_GRB + NEO_KHZ800),
+//  Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_GRB + NEO_KHZ800),
+//  Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_GRB + NEO_KHZ800)
 };
 LiquidCrystal_I2C lcd(0x27,20,4);
 SoftwareSerial XBee(2, 3);
@@ -144,7 +177,9 @@ void setup() {
 
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("1234567890 R");
+  lcd.print("1 2 3 4 5 6 7 8 9");
+  lcd.setCursor(0,2);
+  lcd.print("10 11 12 R");
 }
 
 void loop() {
@@ -191,8 +226,23 @@ void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
   if(camera + 1 == REMOTE_CAMERA) {
     setRemoteTally(tally);
   }
-
-  lcd.setCursor(camera,1);
+  
+  if(camera > 9) {
+    switch(camera) {
+      case 10:
+        lcd.setCursor(0,3);
+        break;
+      case 11:
+        lcd.setCursor(3,3);
+        break;
+      case 12:
+        lcd.setCursor(6,3);
+        break;
+    }
+  } else {
+    lcd.setCursor(camera + camera,1);
+  }
+  
   switch(tally) {
     case 1:
       tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(opBrightness,0,0));
@@ -222,7 +272,7 @@ void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
 }
 
 void setRemoteTally(int tally) {
-  lcd.setCursor(11,1);
+  lcd.setCursor(9,3);
   
   switch(tally) {
     case 1:
