@@ -7508,16 +7508,6 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="TALENT_DIM" gate="-3" pin="S"/>
-<wire x1="-99.06" y1="134.62" x2="-106.68" y2="134.62" width="0.1524" layer="91"/>
-<label x="-106.68" y="134.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="OP_DIM" gate="-3" pin="S"/>
-<wire x1="-99.06" y1="121.92" x2="-106.68" y2="121.92" width="0.1524" layer="91"/>
-<label x="-106.68" y="121.92" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="JP4" gate="A" pin="1"/>
 <wire x1="-132.08" y1="142.24" x2="-149.86" y2="142.24" width="0.1524" layer="91"/>
 <label x="-149.86" y="142.24" size="1.778" layer="95"/>
@@ -7529,9 +7519,19 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <wire x1="-116.84" y1="157.48" x2="-116.84" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="-132.08" y1="121.92" x2="-149.86" y2="121.92" width="0.1524" layer="91"/>
-<label x="-149.86" y="121.92" size="1.778" layer="95"/>
-<pinref part="NEOPIXEL" gate="-2" pin="S"/>
+<wire x1="-132.08" y1="124.46" x2="-149.86" y2="124.46" width="0.1524" layer="91"/>
+<label x="-149.86" y="124.46" size="1.778" layer="95"/>
+<pinref part="NEOPIXEL" gate="-1" pin="S"/>
+</segment>
+<segment>
+<pinref part="TALENT_DIM" gate="-1" pin="S"/>
+<wire x1="-99.06" y1="139.7" x2="-106.68" y2="139.7" width="0.1524" layer="91"/>
+<label x="-106.68" y="139.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OP_DIM" gate="-1" pin="S"/>
+<wire x1="-99.06" y1="127" x2="-106.68" y2="127" width="0.1524" layer="91"/>
+<label x="-106.68" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MEGASDA" class="0">
@@ -8134,9 +8134,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM1" gate="-1" pin="S"/>
-<wire x1="55.88" y1="142.24" x2="43.18" y2="142.24" width="0.1524" layer="91"/>
-<label x="43.18" y="142.24" size="1.778" layer="95"/>
+<pinref part="CAM1" gate="-2" pin="S"/>
+<wire x1="55.88" y1="139.7" x2="43.18" y2="139.7" width="0.1524" layer="91"/>
+<label x="43.18" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM4D+" class="0">
@@ -8146,9 +8146,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="142.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM4" gate="-1" pin="S"/>
-<wire x1="55.88" y1="119.38" x2="43.18" y2="119.38" width="0.1524" layer="91"/>
-<label x="43.18" y="119.38" size="1.778" layer="95"/>
+<pinref part="CAM4" gate="-2" pin="S"/>
+<wire x1="55.88" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
+<label x="43.18" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM3D+" class="0">
@@ -8158,9 +8158,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="144.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM3" gate="-1" pin="S"/>
-<wire x1="55.88" y1="127" x2="43.18" y2="127" width="0.1524" layer="91"/>
-<label x="43.18" y="127" size="1.778" layer="95"/>
+<pinref part="CAM3" gate="-2" pin="S"/>
+<wire x1="55.88" y1="124.46" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
+<label x="43.18" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM2D+" class="0">
@@ -8170,9 +8170,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="139.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM2" gate="-1" pin="S"/>
-<wire x1="55.88" y1="134.62" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
-<label x="43.18" y="134.62" size="1.778" layer="95"/>
+<pinref part="CAM2" gate="-2" pin="S"/>
+<wire x1="55.88" y1="132.08" x2="43.18" y2="132.08" width="0.1524" layer="91"/>
+<label x="43.18" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM1D-" class="0">
@@ -8182,9 +8182,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="134.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM1" gate="-2" pin="S"/>
-<wire x1="55.88" y1="139.7" x2="43.18" y2="139.7" width="0.1524" layer="91"/>
-<label x="43.18" y="139.7" size="1.778" layer="95"/>
+<pinref part="CAM1" gate="-1" pin="S"/>
+<wire x1="55.88" y1="142.24" x2="43.18" y2="142.24" width="0.1524" layer="91"/>
+<label x="43.18" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM4D-" class="0">
@@ -8194,9 +8194,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="129.54" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM4" gate="-2" pin="S"/>
-<wire x1="55.88" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
-<label x="43.18" y="116.84" size="1.778" layer="95"/>
+<pinref part="CAM4" gate="-1" pin="S"/>
+<wire x1="55.88" y1="119.38" x2="43.18" y2="119.38" width="0.1524" layer="91"/>
+<label x="43.18" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM3D-" class="0">
@@ -8206,9 +8206,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM3" gate="-2" pin="S"/>
-<wire x1="55.88" y1="124.46" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
-<label x="43.18" y="124.46" size="1.778" layer="95"/>
+<pinref part="CAM3" gate="-1" pin="S"/>
+<wire x1="55.88" y1="127" x2="43.18" y2="127" width="0.1524" layer="91"/>
+<label x="43.18" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM2D-" class="0">
@@ -8218,9 +8218,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="127" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM2" gate="-2" pin="S"/>
-<wire x1="55.88" y1="132.08" x2="43.18" y2="132.08" width="0.1524" layer="91"/>
-<label x="43.18" y="132.08" size="1.778" layer="95"/>
+<pinref part="CAM2" gate="-1" pin="S"/>
+<wire x1="55.88" y1="134.62" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
+<label x="43.18" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM5D+" class="0">
@@ -8230,9 +8230,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM5" gate="-1" pin="S"/>
-<wire x1="55.88" y1="111.76" x2="43.18" y2="111.76" width="0.1524" layer="91"/>
-<label x="43.18" y="111.76" size="1.778" layer="95"/>
+<pinref part="CAM5" gate="-2" pin="S"/>
+<wire x1="55.88" y1="109.22" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
+<label x="43.18" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM6D+" class="0">
@@ -8242,9 +8242,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="96.52" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM6" gate="-1" pin="S"/>
-<wire x1="55.88" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
-<label x="43.18" y="104.14" size="1.778" layer="95"/>
+<pinref part="CAM6" gate="-2" pin="S"/>
+<wire x1="55.88" y1="101.6" x2="43.18" y2="101.6" width="0.1524" layer="91"/>
+<label x="43.18" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM7D+" class="0">
@@ -8254,9 +8254,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM7" gate="-1" pin="S"/>
-<wire x1="55.88" y1="96.52" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
-<label x="43.18" y="96.52" size="1.778" layer="95"/>
+<pinref part="CAM7" gate="-2" pin="S"/>
+<wire x1="55.88" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
+<label x="43.18" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM8D+" class="0">
@@ -8266,9 +8266,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM8" gate="-1" pin="S"/>
-<wire x1="55.88" y1="88.9" x2="43.18" y2="88.9" width="0.1524" layer="91"/>
-<label x="43.18" y="88.9" size="1.778" layer="95"/>
+<pinref part="CAM8" gate="-2" pin="S"/>
+<wire x1="55.88" y1="86.36" x2="43.18" y2="86.36" width="0.1524" layer="91"/>
+<label x="43.18" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM5D-" class="0">
@@ -8278,9 +8278,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM5" gate="-2" pin="S"/>
-<wire x1="55.88" y1="109.22" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
-<label x="43.18" y="109.22" size="1.778" layer="95"/>
+<pinref part="CAM5" gate="-1" pin="S"/>
+<wire x1="55.88" y1="111.76" x2="43.18" y2="111.76" width="0.1524" layer="91"/>
+<label x="43.18" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM6D-" class="0">
@@ -8290,9 +8290,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="83.82" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM6" gate="-2" pin="S"/>
-<wire x1="55.88" y1="101.6" x2="43.18" y2="101.6" width="0.1524" layer="91"/>
-<label x="43.18" y="101.6" size="1.778" layer="95"/>
+<pinref part="CAM6" gate="-1" pin="S"/>
+<wire x1="55.88" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
+<label x="43.18" y="104.14" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM7D-" class="0">
@@ -8302,9 +8302,9 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM7" gate="-2" pin="S"/>
-<wire x1="55.88" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
-<label x="43.18" y="93.98" size="1.778" layer="95"/>
+<pinref part="CAM7" gate="-1" pin="S"/>
+<wire x1="55.88" y1="96.52" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
+<label x="43.18" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM8D-" class="0">
@@ -8314,57 +8314,57 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="20.32" y="86.36" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAM8" gate="-2" pin="S"/>
-<wire x1="55.88" y1="86.36" x2="43.18" y2="86.36" width="0.1524" layer="91"/>
-<label x="43.18" y="86.36" size="1.778" layer="95"/>
+<pinref part="CAM8" gate="-1" pin="S"/>
+<wire x1="55.88" y1="88.9" x2="43.18" y2="88.9" width="0.1524" layer="91"/>
+<label x="43.18" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM9D+" class="0">
-<segment>
-<pinref part="CAM9" gate="-1" pin="S"/>
-<wire x1="55.88" y1="81.28" x2="43.18" y2="81.28" width="0.1524" layer="91"/>
-<label x="43.18" y="81.28" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="U3" gate="A" pin="1Y"/>
 <wire x1="20.32" y1="60.96" x2="30.48" y2="60.96" width="0.1524" layer="91"/>
 <label x="20.32" y="60.96" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="CAM9D-" class="0">
 <segment>
 <pinref part="CAM9" gate="-2" pin="S"/>
 <wire x1="55.88" y1="78.74" x2="43.18" y2="78.74" width="0.1524" layer="91"/>
 <label x="43.18" y="78.74" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="CAM9D-" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="1Z"/>
 <wire x1="20.32" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
 <label x="20.32" y="48.26" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="CAM9" gate="-1" pin="S"/>
+<wire x1="55.88" y1="81.28" x2="43.18" y2="81.28" width="0.1524" layer="91"/>
+<label x="43.18" y="81.28" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="CAM10D+" class="0">
-<segment>
-<pinref part="CAM10" gate="-1" pin="S"/>
-<wire x1="55.88" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
-<label x="43.18" y="73.66" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="U3" gate="A" pin="4Y"/>
 <wire x1="20.32" y1="53.34" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <label x="20.32" y="53.34" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="CAM10D-" class="0">
 <segment>
 <pinref part="CAM10" gate="-2" pin="S"/>
 <wire x1="55.88" y1="71.12" x2="43.18" y2="71.12" width="0.1524" layer="91"/>
 <label x="43.18" y="71.12" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="CAM10D-" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="4Z"/>
 <wire x1="20.32" y1="40.64" x2="30.48" y2="40.64" width="0.1524" layer="91"/>
 <label x="20.32" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM10" gate="-1" pin="S"/>
+<wire x1="55.88" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
+<label x="43.18" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V@0" class="0">
@@ -8377,16 +8377,6 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="-66.04" y1="137.16" x2="-66.04" y2="119.38" width="0.1524" layer="91"/>
 <label x="-66.04" y="119.38" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="OP_DIM" gate="-1" pin="S"/>
-<wire x1="-99.06" y1="127" x2="-106.68" y2="127" width="0.1524" layer="91"/>
-<label x="-106.68" y="127" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="TALENT_DIM" gate="-1" pin="S"/>
-<wire x1="-99.06" y1="139.7" x2="-106.68" y2="139.7" width="0.1524" layer="91"/>
-<label x="-106.68" y="139.7" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="TALENT_PVW" gate="-2" pin="S"/>
@@ -8409,9 +8399,19 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 <label x="-27.94" y="119.38" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="-132.08" y1="124.46" x2="-149.86" y2="124.46" width="0.1524" layer="91"/>
-<label x="-149.86" y="124.46" size="1.778" layer="95"/>
-<pinref part="NEOPIXEL" gate="-1" pin="S"/>
+<wire x1="-132.08" y1="121.92" x2="-149.86" y2="121.92" width="0.1524" layer="91"/>
+<label x="-149.86" y="121.92" size="1.778" layer="95"/>
+<pinref part="NEOPIXEL" gate="-2" pin="S"/>
+</segment>
+<segment>
+<pinref part="TALENT_DIM" gate="-3" pin="S"/>
+<wire x1="-99.06" y1="134.62" x2="-106.68" y2="134.62" width="0.1524" layer="91"/>
+<label x="-106.68" y="134.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OP_DIM" gate="-3" pin="S"/>
+<wire x1="-99.06" y1="121.92" x2="-106.68" y2="121.92" width="0.1524" layer="91"/>
+<label x="-106.68" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V@1" class="0">
@@ -8453,50 +8453,50 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 </net>
 <net name="CAM11D+" class="0">
 <segment>
-<pinref part="CAM11" gate="-1" pin="S"/>
-<wire x1="55.88" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
-<label x="43.18" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U3" gate="A" pin="2Y"/>
 <wire x1="20.32" y1="58.42" x2="30.48" y2="58.42" width="0.1524" layer="91"/>
 <label x="20.32" y="58.42" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="CAM12D+" class="0">
-<segment>
-<pinref part="CAM12" gate="-1" pin="S"/>
-<wire x1="55.88" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
-<label x="43.18" y="58.42" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U3" gate="A" pin="3Y"/>
-<wire x1="20.32" y1="55.88" x2="30.48" y2="55.88" width="0.1524" layer="91"/>
-<label x="20.32" y="55.88" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="CAM11D-" class="0">
 <segment>
 <pinref part="CAM11" gate="-2" pin="S"/>
 <wire x1="55.88" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
 <label x="43.18" y="63.5" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="U3" gate="A" pin="2Z"/>
-<wire x1="20.32" y1="45.72" x2="30.48" y2="45.72" width="0.1524" layer="91"/>
-<label x="20.32" y="45.72" size="1.778" layer="95"/>
-</segment>
 </net>
-<net name="CAM12D-" class="0">
+<net name="CAM12D+" class="0">
+<segment>
+<pinref part="U3" gate="A" pin="3Y"/>
+<wire x1="20.32" y1="55.88" x2="30.48" y2="55.88" width="0.1524" layer="91"/>
+<label x="20.32" y="55.88" size="1.778" layer="95"/>
+</segment>
 <segment>
 <pinref part="CAM12" gate="-2" pin="S"/>
 <wire x1="55.88" y1="55.88" x2="43.18" y2="55.88" width="0.1524" layer="91"/>
 <label x="43.18" y="55.88" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="CAM11D-" class="0">
+<segment>
+<pinref part="U3" gate="A" pin="2Z"/>
+<wire x1="20.32" y1="45.72" x2="30.48" y2="45.72" width="0.1524" layer="91"/>
+<label x="20.32" y="45.72" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM11" gate="-1" pin="S"/>
+<wire x1="55.88" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
+<label x="43.18" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CAM12D-" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="3Z"/>
 <wire x1="20.32" y1="43.18" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
 <label x="20.32" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM12" gate="-1" pin="S"/>
+<wire x1="55.88" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
+<label x="43.18" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
