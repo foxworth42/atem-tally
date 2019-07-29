@@ -128,6 +128,9 @@
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
+<description>Arduino Mega Shield for Tally Controller
+
+Includes 12 channels of RS485 output, 1 NeoPixel output, 4pin I2C output, XBee serial I/O using XBee regulated breakout, 2 potentiometers for dimming the tally lights, and 1 toggle switch for talent preview.</description>
 <libraries>
 <library name="zortness">
 <description>Zortness' library&lt;br&gt;
