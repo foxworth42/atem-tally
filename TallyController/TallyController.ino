@@ -1,4 +1,4 @@
-#include "TallyBaseStation.h"
+#include "TallyController.h"
 
 Adafruit_NeoPixel tallyUnit[12] = {
   Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_GRB + NEO_KHZ800),
