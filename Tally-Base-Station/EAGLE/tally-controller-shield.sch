@@ -7267,6 +7267,10 @@ LETTER landscape</description>
 Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch input, 
 2 potentiometer inputs, XBee tranciever headers using regulated breakout.</text>
 <text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.1</text>
+<text x="5.08" y="154.94" size="1.778" layer="95">1: Y=1, Z=0
+0: Y=0, Z=1
+Y = B
+Z = A</text>
 </plain>
 <instances>
 <instance part="J2" gate="G$1" x="-99.06" y="50.8" smashed="yes">

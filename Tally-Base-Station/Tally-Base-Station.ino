@@ -1,70 +1,6 @@
-#include <Ethernet.h>
-#include <Adafruit_NeoPixel.h>
-#include <LiquidCrystal_I2C.h>
-#include <ATEMmin.h>
-#include <SoftwareSerial.h>
+#include "TallyBaseStation.h"
 
-// Mega
-//byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x04 };
-//byte ip[] = { 172, 20, 1, 239 };
-// Uno
-byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x03 };
-byte ip[] = { 172, 20, 1, 238 };
-IPAddress switcherIp(172, 20, 1, 240);
-
-#define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
-bool showPreviewToTalent = false;
-#define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel for talent (7 LEDs)
-#define BRIGHTNESS_RATIO    3.5 // For 5kohm pots to convert to 8bit
-#define NUMBER_OF_TALLY_LIGHTS  8   // 8 for ATEM Television Studio, 10 for ATEM 1M/E
-
-// Test unit pin assignments
-#define TALENT_DIMMER_PIN   3   // Global brightness pot for front LED
-#define TALENT_PREVIEW_PIN  16  // Toggle displaying preview indicator to talent.
-#define OP_DIMMER_PIN       3   // Global brightness pot for rear LED
-
-// Uno
-#define CAM1  14
-#define CAM2  15
-#define CAM3  4
-#define CAM4  5
-#define CAM5  6
-#define CAM6  7
-#define CAM7  8
-#define CAM8  9
-
-
-// Mega
-//#define CAM1  22
-//#define CAM2  23
-//#define CAM3  24
-//#define CAM4  25
-//#define CAM5  26
-//#define CAM6  27
-//#define CAM7  28
-//#define CAM8  29
-
-// Controller shield pin assignments
-//#define CAM1  8
-//#define CAM2  7
-//#define CAM3  6
-//#define CAM4  5
-//#define CAM5  26
-//#define CAM6  22
-//#define CAM7  28
-//#define CAM8  24
-//#define CAM9  42
-//#define CAM10 38
-//#define CAM11 44
-//#define CAM12 40
-//#define OP_DIMMER_PIN       A0   // Global brightness pot for rear LED
-//#define TALENT_DIMMER_PIN   A1   // Global brightness pot for front LED
-//#define TALENT_PREVIEW_PIN  A2  // Toggle displaying preview indicator to talent.
-//#define XBEE_In             11
-//#define XBEE_Out            12
-//#define PIXEL               13
-
-Adafruit_NeoPixel tallyUnit[8] = {
+Adafruit_NeoPixel tallyUnit[12] = {
   Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM2, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM3, NEO_GRB + NEO_KHZ800),
@@ -72,14 +8,14 @@ Adafruit_NeoPixel tallyUnit[8] = {
   Adafruit_NeoPixel(LED_COUNT, CAM5, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM6, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM7, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM8, NEO_GRB + NEO_KHZ800)
-//  Adafruit_NeoPixel(LED_COUNT, CAM9, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, CAM10, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_GRB + NEO_KHZ800),
-//  Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_GRB + NEO_KHZ800)
+  Adafruit_NeoPixel(LED_COUNT, CAM8, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM9, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM10, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_GRB + NEO_KHZ800)
 };
 LiquidCrystal_I2C lcd(0x27,20,4);
-SoftwareSerial XBee(2, 3);
+SoftwareSerial XBee(XBEE_In, XBEE_Out);  // TX, RX
 ATEMmin AtemSwitcher;
 
 
@@ -87,9 +23,15 @@ void setup() {
   // disable SD card
   pinMode(4,OUTPUT);
   digitalWrite(4,HIGH);
-  pinMode(TALENT_PREVIEW_PIN, INPUT);
+
+  randomSeed(analogRead(5));
 
   XBee.begin(9600);
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
   
   lcd.init();
   lcd.backlight();
@@ -102,77 +44,68 @@ void setup() {
     tallyUnit[i].show();
   }
 
-  randomSeed(analogRead(5));
-  
   XBee.write("L");
-  // You can use Ethernet.init(pin) to configure the CS pin
-  Ethernet.init(10);  // Most Arduino shields
-  //Ethernet.init(5);   // MKR ETH shield
-  //Ethernet.init(0);   // Teensy 2.0
-  //Ethernet.init(20);  // Teensy++ 2.0
-  //Ethernet.init(15);  // ESP8266 with Adafruit Featherwing Ethernet
-  //Ethernet.init(33);  // ESP32 with Adafruit Featherwing Ethernet
-
-  // Open serial communications and wait for port to open:
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
-
   setAllTally(tallyUnit[0].Color(128,0,0));
 
   Serial.println("Initialize Ethernet:");
   lcd.print("Init Ethernet");
+  Ethernet.init(10);  // Most Arduino shields
   Ethernet.begin(mac, ip);
-//  lcd.setCursor(0,1);
-//  lcd.print("with DHCP");
-//  if (Ethernet.begin(mac) == 0) {
-//    lcd.clear();
-//    Serial.println("Failed to configure Ethernet using DHCP");
-//    lcd.setCursor(0,0);
-//    lcd.print("Failed to configure");
-//    lcd.setCursor(0,1);
-//    lcd.print("Ethernet using DHCP");
-//    if (Ethernet.hardwareStatus() == EthernetNoHardware) {
-//      delay(1000);
-//      lcd.setCursor(0,0);
-//      lcd.print("Ethernet shield");
-//      lcd.setCursor(0,1);
-//      lcd.print("was not found.");
-//      Serial.println("Ethernet shield was not found.");
-//    } else if (Ethernet.linkStatus() == LinkOFF) {
-//      delay(1000);
-//      lcd.setCursor(0,2);
-//      lcd.print("Ethernet cable is not connected.");
-//      Serial.println("Ethernet cable is not connected.");
-//    }
-//    // no point in carrying on, so do nothing forevermore:
-//    while (true) {
-//      delay(1);
-//    }
-//  }
 
-  Serial.println(Ethernet.subnetMask());
-  
+  if (Ethernet.hardwareStatus() == EthernetNoHardware) {
+    lcd.setCursor(0,0);
+    lcd.print("Ethernet shield");
+    lcd.setCursor(0,1);
+    lcd.print("was not found.");
+    Serial.println("Ethernet shield was not found.");
+    while (true) {
+      delay(1);
+    }
+  } else if (Ethernet.linkStatus() == LinkOFF) {
+    lcd.setCursor(0,2);
+    lcd.print("Ethernet cable is not connected.");
+    Serial.println("Ethernet cable is not connected.");
+    while (true) {
+      delay(1);
+    }
+  }
+ 
+  XBee.write("T");
   setAllTally(tallyUnit[0].Color(0,128,0));
   
-  // print your local IP address:
+  // print local IP address:
   Serial.print("My IP address: ");
   Serial.println(Ethernet.localIP());
+  Serial.print("Subnet Mask: ");
+  Serial.println(Ethernet.subnetMask());
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("IP Address:");
   lcd.setCursor(0,1);
   lcd.print(Ethernet.localIP());
+  lcd.setCursor(0,2);
+  lcd.print("Subnet Mask: ");
+  lcd.setCursor(0,3);
+  lcd.print(Ethernet.subnetMask());
 
   AtemSwitcher.begin(switcherIp);
   AtemSwitcher.serialOutput(1);
   AtemSwitcher.connect();
 
+  XBee.write("B");
   setAllTally(tallyUnit[0].Color(0,0,128));
 
   delay(2000);
 
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("ATEM IP Address:");
+  lcd.setCursor(0,1);
+  lcd.print(switcherIp);
+
+  delay(2000);
+
+  XBee.write("C");
   setAllTally(tallyUnit[0].Color(0,0,0));
 
   lcd.clear();
@@ -191,32 +124,6 @@ void loop() {
     setTalleyLight(i, (int) analogRead(TALENT_DIMMER_PIN) / BRIGHTNESS_RATIO, (int) analogRead(OP_DIMMER_PIN) / BRIGHTNESS_RATIO);
   }
   
-//  Ethernet.maintain();
-//  switch (Ethernet.maintain()) {
-//    case 1:
-//      Serial.println("Error: renewed fail");
-//      break;
-//
-//    case 2:
-//      Serial.println("Renewed success");
-//      Serial.print("My IP address: ");
-//      Serial.println(Ethernet.localIP());
-//      break;
-//
-//    case 3:
-//      Serial.println("Error: rebind fail");
-//      break;
-//
-//    case 4:
-//      Serial.println("Rebind success");
-//      Serial.print("My IP address: ");
-//      Serial.println(Ethernet.localIP());
-//      break;
-//
-//    default:
-//      //nothing happened
-//      break;
-//  }
   delay(50);
 }
 
