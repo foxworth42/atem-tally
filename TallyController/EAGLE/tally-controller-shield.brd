@@ -3,7 +3,7 @@
 <eagle version="9.4.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -135,29 +135,29 @@
 <text x="23.495" y="2.54" size="0.6096" layer="25" ratio="15" align="top-left">DATA</text>
 <text x="18.415" y="2.54" size="0.6096" layer="25" ratio="15" align="top-left">GND</text>
 <text x="20.955" y="2.54" size="0.6096" layer="25" ratio="15" align="top-left">5V</text>
-<text x="69.85" y="16.51" size="1.27" layer="25" align="center">-  +</text>
-<text x="76.2" y="16.51" size="1.27" layer="25" align="center">-  +</text>
+<text x="72.39" y="16.51" size="1.27" layer="25" align="center">-  +</text>
+<text x="77.47" y="16.51" size="1.27" layer="25" align="center">-  +</text>
 <text x="82.55" y="16.51" size="1.27" layer="25" align="center">-  +</text>
-<text x="88.9" y="16.51" size="1.27" layer="25" align="center">-  +</text>
-<text x="88.9" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="87.63" y="16.51" size="1.27" layer="25" align="center">-  +</text>
+<text x="87.63" y="35.56" size="1.27" layer="25" align="center">-  +</text>
 <text x="82.55" y="35.56" size="1.27" layer="25" align="center">-  +</text>
-<text x="76.2" y="35.56" size="1.27" layer="25" align="center">-  +</text>
-<text x="69.85" y="35.56" size="1.27" layer="25" align="center">-  +</text>
-<text x="40.64" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="77.47" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="72.39" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="41.91" y="35.56" size="1.27" layer="25" align="center">-  +</text>
 <text x="46.99" y="35.56" size="1.27" layer="25" align="center">-  +</text>
-<text x="53.34" y="35.56" size="1.27" layer="25" align="center">-  +</text>
-<text x="59.69" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="52.07" y="35.56" size="1.27" layer="25" align="center">-  +</text>
+<text x="57.15" y="35.56" size="1.27" layer="25" align="center">-  +</text>
 <text x="34.29" y="7.62" size="1.778" layer="25">ATEM Tally Controller</text>
 <text x="34.29" y="5.08" size="1.778" layer="25">Rev1.1</text>
-<text x="7.62" y="8.255" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">5V</text>
-<text x="5.08" y="8.255" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">GND</text>
-<text x="10.16" y="8.255" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">SDA</text>
-<text x="12.7" y="8.255" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">SCL</text>
+<text x="7.62" y="14.605" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">5V</text>
+<text x="5.08" y="14.605" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">GND</text>
+<text x="10.16" y="14.605" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">SDA</text>
+<text x="12.7" y="14.605" size="0.6096" layer="25" ratio="15" rot="R90" align="center-left">SCL</text>
 <text x="43.815" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">5V</text>
-<text x="52.705" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">5V</text>
+<text x="53.975" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">5V</text>
 <text x="38.735" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">GND</text>
-<text x="47.625" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">GND</text>
-<text x="50.165" y="16.51" size="1.4224" layer="25" ratio="10" align="center-left">~</text>
+<text x="48.895" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">GND</text>
+<text x="51.435" y="16.51" size="1.4224" layer="25" ratio="10" align="center-left">~</text>
 <text x="41.275" y="16.51" size="1.4224" layer="25" ratio="10" align="center-left">~</text>
 <text x="56.515" y="16.51" size="0.6096" layer="25" ratio="15" align="top-left">SWITCH</text>
 <text x="38.735" y="11.43" size="0.6096" layer="25" ratio="15">10kOhm Pot</text>
@@ -2512,9 +2512,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="POPULARITY" value="98" x="93.98" y="-55.88" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="0" y="24.765" size="1.27" layer="27"/>
 </element>
-<element name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="I2C" x="8.89" y="6.35" smashed="yes">
-<attribute name="NAME" x="15.1638" y="5.715" size="1.27" layer="25" ratio="10" rot="R90" align="center-left"/>
-<attribute name="VALUE" x="2.54" y="5.715" size="1.27" layer="25" rot="R90" align="center-left"/>
+<element name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="I2C" x="8.89" y="12.7" smashed="yes">
+<attribute name="NAME" x="15.1638" y="12.065" size="1.27" layer="25" ratio="10" rot="R90" align="center-left"/>
+<attribute name="VALUE" x="2.54" y="12.065" size="1.27" layer="25" rot="R90" align="center-left"/>
 </element>
 <element name="OP_DIM" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2031" package3d_urn="urn:adsk.eagle:package:8078634/1" value="22-23-2031" x="41.91" y="13.97" smashed="yes">
 <attribute name="MF" value="MOLEX" x="129.54" y="-46.99" size="1.778" layer="27" display="off"/>
@@ -2553,7 +2553,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <element name="TALENT_PVW" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="58.42" y="13.97" smashed="yes">
 <attribute name="MF" value="MOLEX" x="128.27" y="-46.99" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="22-23-2021" x="128.27" y="-46.99" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="55.88" y="17.78" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="62.23" y="11.43" size="1.016" layer="25" ratio="10" rot="R90"/>
 <attribute name="OC_FARNELL" value="1462926" x="128.27" y="-46.99" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="25C3832" x="128.27" y="-46.99" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="40" x="128.27" y="-46.99" size="1.778" layer="27" display="off"/>
@@ -2588,13 +2588,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PRICE" value="None" x="146.05" y="78.74" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="85.046040625" y="22.20766875" size="2.086590625" layer="25" ratio="10" rot="SR0" align="bottom-right"/>
 </element>
-<element name="CAM1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="40.64" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="40.64" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="40.64" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="40.64" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="40.64" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="40.64" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="40.64" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="41.91" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="41.91" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="41.91" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="41.91" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="41.91" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="41.91" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="41.91" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
 <element name="CAM2" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="46.99" y="33.02" smashed="yes">
 <attribute name="MF" value="MOLEX" x="46.99" y="33.02" size="1.778" layer="27" display="off"/>
@@ -2604,37 +2604,37 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="OC_NEWARK" value="25C3832" x="46.99" y="33.02" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="40" x="46.99" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM3" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="53.34" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="53.34" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="53.34" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="53.34" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="53.34" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="53.34" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="53.34" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM3" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="52.07" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="52.07" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="52.07" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="52.07" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="52.07" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="52.07" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="52.07" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM4" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="59.69" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="59.69" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="59.69" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="59.69" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="59.69" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="59.69" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="59.69" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM4" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="57.15" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="57.15" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="57.15" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="57.15" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="57.15" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="57.15" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="57.15" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM5" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="69.85" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="69.85" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="69.85" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="69.85" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="69.85" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="69.85" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="69.85" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM5" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="72.39" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="72.39" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="72.39" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="72.39" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="72.39" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="72.39" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="72.39" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM6" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="76.2" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="76.2" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="76.2" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="76.2" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="76.2" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="76.2" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="76.2" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM6" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="77.47" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="77.47" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="77.47" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="77.47" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="77.47" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="77.47" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="77.47" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
 <element name="CAM7" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="82.55" y="33.02" smashed="yes">
 <attribute name="MF" value="MOLEX" x="82.55" y="33.02" size="1.778" layer="27" display="off"/>
@@ -2644,29 +2644,29 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="OC_NEWARK" value="25C3832" x="82.55" y="33.02" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="40" x="82.55" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM8" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="88.9" y="33.02" smashed="yes">
-<attribute name="MF" value="MOLEX" x="88.9" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="88.9" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="88.9" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="88.9" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="88.9" y="33.02" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="88.9" y="33.02" size="1.778" layer="27" display="off"/>
+<element name="CAM8" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="87.63" y="33.02" smashed="yes">
+<attribute name="MF" value="MOLEX" x="87.63" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="87.63" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="87.63" y="29.21" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="87.63" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="87.63" y="33.02" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="87.63" y="33.02" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM9" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="69.85" y="13.97" smashed="yes">
-<attribute name="MF" value="MOLEX" x="69.85" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="69.85" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="69.85" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="69.85" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="69.85" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="69.85" y="13.97" size="1.778" layer="27" display="off"/>
+<element name="CAM9" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="72.39" y="13.97" smashed="yes">
+<attribute name="MF" value="MOLEX" x="72.39" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="72.39" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="72.39" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="72.39" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="72.39" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="72.39" y="13.97" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM10" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="76.2" y="13.97" smashed="yes">
-<attribute name="MF" value="MOLEX" x="76.2" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="76.2" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="76.2" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="76.2" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="76.2" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="76.2" y="13.97" size="1.778" layer="27" display="off"/>
+<element name="CAM10" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="77.47" y="13.97" smashed="yes">
+<attribute name="MF" value="MOLEX" x="77.47" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="77.47" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="77.47" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="77.47" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="77.47" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="77.47" y="13.97" size="1.778" layer="27" display="off"/>
 </element>
 <element name="CAM11" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="82.55" y="13.97" smashed="yes">
 <attribute name="MF" value="MOLEX" x="82.55" y="13.97" size="1.778" layer="27" display="off"/>
@@ -2676,13 +2676,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="OC_NEWARK" value="25C3832" x="82.55" y="13.97" size="1.778" layer="27" display="off"/>
 <attribute name="POPULARITY" value="40" x="82.55" y="13.97" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CAM12" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="88.9" y="13.97" smashed="yes">
-<attribute name="MF" value="MOLEX" x="88.9" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="22-23-2021" x="88.9" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="88.9" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
-<attribute name="OC_FARNELL" value="1462926" x="88.9" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="25C3832" x="88.9" y="13.97" size="1.778" layer="27" display="off"/>
-<attribute name="POPULARITY" value="40" x="88.9" y="13.97" size="1.778" layer="27" display="off"/>
+<element name="CAM12" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2021" package3d_urn="urn:adsk.eagle:package:8078633/1" value="22-23-2021" x="87.63" y="13.97" smashed="yes">
+<attribute name="MF" value="MOLEX" x="87.63" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="22-23-2021" x="87.63" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="87.63" y="10.16" size="1.016" layer="25" ratio="10" align="top-center"/>
+<attribute name="OC_FARNELL" value="1462926" x="87.63" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="25C3832" x="87.63" y="13.97" size="1.778" layer="27" display="off"/>
+<attribute name="POPULARITY" value="40" x="87.63" y="13.97" size="1.778" layer="27" display="off"/>
 </element>
 <element name="NEOPIXEL" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2031" package3d_urn="urn:adsk.eagle:package:8078634/1" value="22-23-2031" x="21.59" y="6.35" smashed="yes">
 <attribute name="MF" value="MOLEX" x="21.59" y="6.35" size="1.778" layer="27" display="off"/>
@@ -2750,7 +2750,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="TALENT_PVW" pad="1"/>
 <contactref element="R2" pad="1"/>
 <wire x1="57.15" y1="13.97" x2="57.15" y2="3.81" width="0.1524" layer="16"/>
-<wire x1="57.15" y1="3.81" x2="55.88" y2="2.54" width="0.1524" layer="16"/>
+<wire x1="55.88" y1="2.54" x2="57.15" y2="3.81" width="0.1524" layer="16"/>
 <wire x1="60.96" y1="22.86" x2="60.96" y2="17.78" width="0.1524" layer="16"/>
 <wire x1="60.96" y1="17.78" x2="57.15" y2="13.97" width="0.1524" layer="16"/>
 </signal>
@@ -2907,16 +2907,16 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="MEGASDA1">
 <contactref element="J2" pad="SDA1"/>
 <contactref element="JP4" pad="3"/>
-<wire x1="10.16" y1="6.35" x2="10.16" y2="11.43" width="0.1524" layer="1"/>
-<wire x1="10.16" y1="11.43" x2="19.05" y2="20.32" width="0.1524" layer="1"/>
+<wire x1="10.16" y1="12.7" x2="11.43" y2="12.7" width="0.1524" layer="1"/>
+<wire x1="11.43" y1="12.7" x2="19.05" y2="20.32" width="0.1524" layer="1"/>
 <wire x1="19.05" y1="20.32" x2="19.05" y2="50.546" width="0.1524" layer="1"/>
 <wire x1="19.05" y1="50.546" x2="18.796" y2="50.8" width="0.1524" layer="1"/>
 </signal>
 <signal name="MEGASCL1">
 <contactref element="J2" pad="SCL1"/>
 <contactref element="JP4" pad="4"/>
-<wire x1="12.7" y1="6.35" x2="12.7" y2="10.16" width="0.1524" layer="1"/>
-<wire x1="12.7" y1="10.16" x2="21.59" y2="19.05" width="0.1524" layer="1"/>
+<wire x1="12.7" y1="12.7" x2="15.24" y2="12.7" width="0.1524" layer="1"/>
+<wire x1="15.24" y1="12.7" x2="21.59" y2="19.05" width="0.1524" layer="1"/>
 <wire x1="21.59" y1="19.05" x2="21.59" y2="50.546" width="0.1524" layer="1"/>
 <wire x1="21.59" y1="50.546" x2="21.336" y2="50.8" width="0.1524" layer="1"/>
 </signal>
@@ -3059,49 +3059,45 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="CAM1D+">
 <contactref element="U1" pad="2"/>
 <contactref element="CAM1" pad="2"/>
-<wire x1="41.91" y1="33.02" x2="41.91" y2="36.83" width="0.3048" layer="16"/>
-<wire x1="41.91" y1="36.83" x2="43.18" y2="38.1" width="0.3048" layer="16"/>
+<wire x1="43.18" y1="33.02" x2="43.18" y2="38.1" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM4D+">
 <contactref element="U1" pad="10"/>
 <contactref element="CAM4" pad="2"/>
-<wire x1="55.88" y1="45.72" x2="60.96" y2="40.64" width="0.3048" layer="1"/>
-<wire x1="60.96" y1="40.64" x2="60.96" y2="33.02" width="0.3048" layer="1"/>
+<wire x1="55.88" y1="45.72" x2="59.69" y2="41.91" width="0.3048" layer="1"/>
+<wire x1="59.69" y1="41.91" x2="59.69" y2="34.29" width="0.3048" layer="1"/>
+<wire x1="59.69" y1="34.29" x2="58.42" y2="33.02" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM3D+">
 <contactref element="U1" pad="6"/>
 <contactref element="CAM3" pad="2"/>
-<wire x1="54.61" y1="33.02" x2="54.61" y2="36.83" width="0.3048" layer="1"/>
-<wire x1="54.61" y1="36.83" x2="53.34" y2="38.1" width="0.3048" layer="1"/>
+<wire x1="53.34" y1="33.02" x2="53.34" y2="38.1" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM2D+">
 <contactref element="U1" pad="14"/>
 <contactref element="CAM2" pad="2"/>
-<wire x1="48.26" y1="33.02" x2="48.26" y2="35.56" width="0.3048" layer="16"/>
-<wire x1="48.26" y1="35.56" x2="46.99" y2="36.83" width="0.3048" layer="16"/>
-<wire x1="46.99" y1="36.83" x2="46.99" y2="44.45" width="0.3048" layer="16"/>
-<wire x1="46.99" y1="44.45" x2="45.72" y2="45.72" width="0.3048" layer="16"/>
+<wire x1="48.26" y1="33.02" x2="48.26" y2="43.18" width="0.3048" layer="16"/>
+<wire x1="48.26" y1="43.18" x2="45.72" y2="45.72" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM1D-">
 <contactref element="U1" pad="3"/>
 <contactref element="CAM1" pad="1"/>
-<wire x1="39.37" y1="33.02" x2="39.37" y2="34.29" width="0.3048" layer="1"/>
-<wire x1="39.37" y1="34.29" x2="40.64" y2="35.56" width="0.3048" layer="1"/>
-<wire x1="40.64" y1="35.56" x2="43.18" y2="35.56" width="0.3048" layer="1"/>
 <wire x1="43.18" y1="35.56" x2="45.72" y2="38.1" width="0.3048" layer="1"/>
+<wire x1="40.64" y1="33.02" x2="40.64" y2="34.29" width="0.3048" layer="1"/>
+<wire x1="40.64" y1="34.29" x2="41.91" y2="35.56" width="0.3048" layer="1"/>
+<wire x1="41.91" y1="35.56" x2="43.18" y2="35.56" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM4D-">
 <contactref element="U1" pad="11"/>
 <contactref element="CAM4" pad="1"/>
-<wire x1="58.42" y1="33.02" x2="57.15" y2="34.29" width="0.3048" layer="1"/>
+<wire x1="55.88" y1="33.02" x2="57.15" y2="34.29" width="0.3048" layer="1"/>
 <wire x1="57.15" y1="41.91" x2="53.34" y2="45.72" width="0.3048" layer="1"/>
 <wire x1="57.15" y1="34.29" x2="57.15" y2="41.91" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM3D-">
 <contactref element="U1" pad="5"/>
 <contactref element="CAM3" pad="1"/>
-<wire x1="52.07" y1="33.02" x2="52.07" y2="36.83" width="0.3048" layer="1"/>
-<wire x1="52.07" y1="36.83" x2="50.8" y2="38.1" width="0.3048" layer="1"/>
+<wire x1="50.8" y1="33.02" x2="50.8" y2="38.1" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM2D-">
 <contactref element="U1" pad="13"/>
@@ -3114,7 +3110,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="CAM5D+">
 <contactref element="U2" pad="2"/>
 <contactref element="CAM5" pad="2"/>
-<wire x1="71.12" y1="33.02" x2="71.12" y2="38.1" width="0.3048" layer="16"/>
+<wire x1="73.66" y1="35.56" x2="71.12" y2="38.1" width="0.3048" layer="16"/>
+<wire x1="73.66" y1="35.56" x2="73.66" y2="33.02" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM6D+">
 <contactref element="U2" pad="14"/>
@@ -3123,8 +3120,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="73.66" y1="45.72" x2="73.66" y2="40.64" width="0.3048" layer="16"/>
 <wire x1="73.66" y1="40.64" x2="74.93" y2="39.37" width="0.3048" layer="1"/>
 <wire x1="74.93" y1="39.37" x2="74.93" y2="36.83" width="0.3048" layer="1"/>
-<wire x1="74.93" y1="36.83" x2="77.47" y2="34.29" width="0.3048" layer="1"/>
-<wire x1="77.47" y1="34.29" x2="77.47" y2="33.02" width="0.3048" layer="1"/>
+<wire x1="74.93" y1="36.83" x2="78.74" y2="33.02" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM7D+">
 <contactref element="U2" pad="6"/>
@@ -3135,22 +3131,21 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="CAM8D+">
 <contactref element="U2" pad="10"/>
 <contactref element="CAM8" pad="2"/>
-<wire x1="83.82" y1="45.72" x2="90.17" y2="39.37" width="0.3048" layer="16"/>
-<wire x1="90.17" y1="39.37" x2="90.17" y2="33.02" width="0.3048" layer="16"/>
+<wire x1="83.82" y1="45.72" x2="88.9" y2="40.64" width="0.3048" layer="16"/>
+<wire x1="88.9" y1="40.64" x2="88.9" y2="33.02" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM5D-">
 <contactref element="U2" pad="3"/>
 <contactref element="CAM5" pad="1"/>
-<wire x1="68.58" y1="33.02" x2="68.58" y2="34.29" width="0.3048" layer="1"/>
-<wire x1="68.58" y1="34.29" x2="69.85" y2="35.56" width="0.3048" layer="1"/>
-<wire x1="69.85" y1="35.56" x2="71.12" y2="35.56" width="0.3048" layer="1"/>
+<wire x1="71.12" y1="33.02" x2="71.12" y2="35.56" width="0.3048" layer="1"/>
 <wire x1="71.12" y1="35.56" x2="73.66" y2="38.1" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM6D-">
 <contactref element="U2" pad="13"/>
 <contactref element="CAM6" pad="1"/>
-<wire x1="74.93" y1="33.02" x2="74.93" y2="44.45" width="0.3048" layer="16"/>
-<wire x1="74.93" y1="44.45" x2="76.2" y2="45.72" width="0.3048" layer="16"/>
+<wire x1="76.2" y1="45.72" x2="74.93" y2="44.45" width="0.3048" layer="16"/>
+<wire x1="74.93" y1="44.45" x2="74.93" y2="34.29" width="0.3048" layer="16"/>
+<wire x1="74.93" y1="34.29" x2="76.2" y2="33.02" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM7D-">
 <contactref element="U2" pad="5"/>
@@ -3161,21 +3156,20 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="CAM8D-">
 <contactref element="U2" pad="11"/>
 <contactref element="CAM8" pad="1"/>
-<wire x1="87.63" y1="33.02" x2="85.09" y2="35.56" width="0.3048" layer="16"/>
+<wire x1="86.36" y1="33.02" x2="85.09" y2="34.29" width="0.3048" layer="16"/>
 <wire x1="85.09" y1="41.91" x2="81.28" y2="45.72" width="0.3048" layer="16"/>
-<wire x1="85.09" y1="35.56" x2="85.09" y2="41.91" width="0.3048" layer="16"/>
+<wire x1="85.09" y1="34.29" x2="85.09" y2="41.91" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM9D+">
 <contactref element="U3" pad="2"/>
 <contactref element="CAM9" pad="2"/>
-<wire x1="71.12" y1="13.97" x2="71.12" y2="19.05" width="0.3048" layer="16"/>
+<wire x1="73.66" y1="16.51" x2="73.66" y2="13.97" width="0.3048" layer="16"/>
+<wire x1="73.66" y1="16.51" x2="71.12" y2="19.05" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM9D-">
 <contactref element="U3" pad="3"/>
 <contactref element="CAM9" pad="1"/>
-<wire x1="68.58" y1="13.97" x2="68.58" y2="15.24" width="0.3048" layer="1"/>
-<wire x1="68.58" y1="15.24" x2="69.85" y2="16.51" width="0.3048" layer="1"/>
-<wire x1="69.85" y1="16.51" x2="71.12" y2="16.51" width="0.3048" layer="1"/>
+<wire x1="71.12" y1="13.97" x2="71.12" y2="16.51" width="0.3048" layer="1"/>
 <wire x1="71.12" y1="16.51" x2="73.66" y2="19.05" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM10D+">
@@ -3183,15 +3177,15 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="CAM10" pad="2"/>
 <via x="73.66" y="21.59" extent="1-16" drill="0.35"/>
 <wire x1="73.66" y1="26.67" x2="73.66" y2="21.59" width="0.3048" layer="16"/>
-<wire x1="77.47" y1="13.97" x2="77.47" y2="15.24" width="0.3048" layer="1"/>
-<wire x1="77.47" y1="15.24" x2="74.93" y2="17.78" width="0.3048" layer="1"/>
+<wire x1="78.74" y1="13.97" x2="74.93" y2="17.78" width="0.3048" layer="1"/>
 <wire x1="74.93" y1="17.78" x2="74.93" y2="20.32" width="0.3048" layer="1"/>
 <wire x1="74.93" y1="20.32" x2="73.66" y2="21.59" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM10D-">
 <contactref element="U3" pad="13"/>
 <contactref element="CAM10" pad="1"/>
-<wire x1="74.93" y1="13.97" x2="74.93" y2="25.4" width="0.3048" layer="16"/>
+<wire x1="74.93" y1="25.4" x2="74.93" y2="15.24" width="0.3048" layer="16"/>
+<wire x1="76.2" y1="13.97" x2="74.93" y2="15.24" width="0.3048" layer="16"/>
 <wire x1="74.93" y1="25.4" x2="76.2" y2="26.67" width="0.3048" layer="16"/>
 </signal>
 <signal name="5V@0">
@@ -3201,8 +3195,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="JP4" pad="2"/>
 <contactref element="U1" pad="16"/>
 <contactref element="R1" pad="2"/>
-<wire x1="59.69" y1="13.97" x2="59.69" y2="12.7" width="0.508" layer="1"/>
-<wire x1="59.69" y1="12.7" x2="58.42" y2="11.43" width="0.508" layer="1"/>
 <wire x1="58.42" y1="11.43" x2="52.07" y2="11.43" width="0.508" layer="1"/>
 <wire x1="52.07" y1="11.43" x2="43.18" y2="11.43" width="0.508" layer="1"/>
 <wire x1="43.18" y1="11.43" x2="41.91" y2="11.43" width="0.508" layer="1"/>
@@ -3215,8 +3207,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="38.1" y1="7.62" x2="38.1" y2="2.54" width="0.508" layer="1"/>
 <wire x1="44.45" y1="13.97" x2="44.45" y2="12.7" width="0.508" layer="1"/>
 <wire x1="44.45" y1="12.7" x2="43.18" y2="11.43" width="0.508" layer="1"/>
-<wire x1="53.34" y1="13.97" x2="53.34" y2="12.7" width="0.508" layer="1"/>
-<wire x1="53.34" y1="12.7" x2="52.07" y2="11.43" width="0.508" layer="1"/>
 <wire x1="38.1" y1="22.86" x2="38.1" y2="19.05" width="0.508" layer="1"/>
 <wire x1="21.59" y1="30.48" x2="24.13" y2="33.02" width="0.508" layer="16"/>
 <wire x1="24.13" y1="33.02" x2="26.67" y2="33.02" width="0.508" layer="16"/>
@@ -3230,10 +3220,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="39.37" y1="45.72" x2="40.64" y2="45.72" width="0.508" layer="16"/>
 <wire x1="21.59" y1="6.35" x2="21.59" y2="7.62" width="0.508" layer="16"/>
 <wire x1="21.59" y1="7.62" x2="21.59" y2="30.48" width="0.508" layer="16"/>
-<wire x1="7.62" y1="6.35" x2="7.62" y2="8.89" width="0.508" layer="16"/>
-<wire x1="7.62" y1="8.89" x2="8.89" y2="10.16" width="0.508" layer="16"/>
-<wire x1="8.89" y1="10.16" x2="19.05" y2="10.16" width="0.508" layer="16"/>
+<wire x1="7.62" y1="12.7" x2="10.16" y2="10.16" width="0.508" layer="16"/>
+<wire x1="19.05" y1="10.16" x2="10.16" y2="10.16" width="0.508" layer="16"/>
 <wire x1="19.05" y1="10.16" x2="21.59" y2="7.62" width="0.508" layer="16"/>
+<wire x1="53.34" y1="13.97" x2="53.34" y2="12.7" width="0.508" layer="1"/>
+<wire x1="53.34" y1="12.7" x2="52.07" y2="11.43" width="0.508" layer="1"/>
+<wire x1="59.69" y1="13.97" x2="59.69" y2="12.7" width="0.508" layer="1"/>
+<wire x1="59.69" y1="12.7" x2="58.42" y2="11.43" width="0.508" layer="1"/>
 </signal>
 <signal name="5V@1">
 <contactref element="J2" pad="5V@1"/>
@@ -3264,26 +3257,28 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="CAM11D+">
 <contactref element="U3" pad="6"/>
 <contactref element="CAM11" pad="2"/>
-<wire x1="83.82" y1="13.97" x2="81.28" y2="16.51" width="0.3048" layer="1"/>
-<wire x1="81.28" y1="16.51" x2="81.28" y2="19.05" width="0.3048" layer="1"/>
+<wire x1="83.82" y1="16.51" x2="83.82" y2="13.97" width="0.3048" layer="1"/>
+<wire x1="83.82" y1="16.51" x2="81.28" y2="19.05" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM12D+">
 <contactref element="U3" pad="10"/>
 <contactref element="CAM12" pad="2"/>
-<wire x1="83.82" y1="26.67" x2="90.17" y2="20.32" width="0.3048" layer="16"/>
-<wire x1="90.17" y1="20.32" x2="90.17" y2="13.97" width="0.3048" layer="16"/>
+<wire x1="83.82" y1="26.67" x2="87.63" y2="22.86" width="0.3048" layer="16"/>
+<wire x1="87.63" y1="22.86" x2="87.63" y2="15.24" width="0.3048" layer="16"/>
+<wire x1="87.63" y1="15.24" x2="88.9" y2="13.97" width="0.3048" layer="16"/>
 </signal>
 <signal name="CAM11D-">
 <contactref element="U3" pad="5"/>
 <contactref element="CAM11" pad="1"/>
-<wire x1="81.28" y1="13.97" x2="78.74" y2="16.51" width="0.3048" layer="1"/>
-<wire x1="78.74" y1="16.51" x2="78.74" y2="19.05" width="0.3048" layer="1"/>
+<wire x1="81.28" y1="16.51" x2="78.74" y2="19.05" width="0.3048" layer="1"/>
+<wire x1="81.28" y1="16.51" x2="81.28" y2="13.97" width="0.3048" layer="1"/>
 </signal>
 <signal name="CAM12D-">
 <contactref element="U3" pad="11"/>
 <contactref element="CAM12" pad="1"/>
-<wire x1="87.63" y1="13.97" x2="87.63" y2="20.32" width="0.3048" layer="16"/>
-<wire x1="87.63" y1="20.32" x2="81.28" y2="26.67" width="0.3048" layer="16"/>
+<wire x1="86.36" y1="13.97" x2="85.09" y2="15.24" width="0.3048" layer="16"/>
+<wire x1="85.09" y1="22.86" x2="85.09" y2="15.24" width="0.3048" layer="16"/>
+<wire x1="85.09" y1="22.86" x2="81.28" y2="26.67" width="0.3048" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
