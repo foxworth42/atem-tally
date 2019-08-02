@@ -7254,6 +7254,7 @@ LETTER landscape</description>
 <part name="CAM12" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device="" package3d_urn="urn:adsk.eagle:package:8078633/1"/>
 <part name="NEOPIXEL" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2031" device="" package3d_urn="urn:adsk.eagle:package:8078634/1" value="22-23-2031"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="LETTER_L" device=""/>
+<part name="EXTPOWER" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device="" package3d_urn="urn:adsk.eagle:package:8078633/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -7266,7 +7267,7 @@ LETTER landscape</description>
 <text x="-15.24" y="15.24" size="1.778" layer="94" align="top-left">Arduino Mega Shield for ATEM Tally Controller
 Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch input, 
 2 potentiometer inputs, XBee tranciever headers using regulated breakout.</text>
-<text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.1</text>
+<text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.2</text>
 <text x="5.08" y="154.94" size="1.778" layer="95">1: Y=1, Z=0
 0: Y=0, Z=1
 Y = B
@@ -7462,6 +7463,13 @@ Z = A</text>
 <attribute name="SHEET" x="68.58" y="-16.51" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="0" y="1.27" size="2.54" layer="94"/>
 </instance>
+<instance part="EXTPOWER" gate="-1" x="-134.62" y="157.48" smashed="yes">
+<attribute name="NAME" x="-132.08" y="156.718" size="1.524" layer="95"/>
+<attribute name="VALUE" x="-135.382" y="158.877" size="1.778" layer="96"/>
+</instance>
+<instance part="EXTPOWER" gate="-2" x="-134.62" y="154.94" smashed="yes">
+<attribute name="NAME" x="-132.08" y="154.178" size="1.524" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7536,6 +7544,11 @@ Z = A</text>
 <pinref part="OP_DIM" gate="-1" pin="S"/>
 <wire x1="-99.06" y1="127" x2="-106.68" y2="127" width="0.1524" layer="91"/>
 <label x="-106.68" y="127" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="EXTPOWER" gate="-1" pin="S"/>
+<wire x1="-137.16" y1="157.48" x2="-152.4" y2="157.48" width="0.1524" layer="91"/>
+<label x="-152.4" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MEGASDA" class="0">
@@ -8378,34 +8391,9 @@ Z = A</text>
 <label x="-132.08" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
-<wire x1="-66.04" y1="137.16" x2="-66.04" y2="119.38" width="0.1524" layer="91"/>
-<label x="-66.04" y="119.38" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <pinref part="TALENT_PVW" gate="-2" pin="S"/>
 <wire x1="-99.06" y1="147.32" x2="-109.22" y2="147.32" width="0.1524" layer="91"/>
 <label x="-109.22" y="147.32" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP4" gate="A" pin="2"/>
-<wire x1="-132.08" y1="139.7" x2="-149.86" y2="139.7" width="0.1524" layer="91"/>
-<label x="-149.86" y="139.7" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U1" gate="A" pin="VCC"/>
-<wire x1="-15.24" y1="147.32" x2="-22.86" y2="147.32" width="0.1524" layer="91"/>
-<label x="-22.86" y="147.32" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="-30.48" y1="127" x2="-30.48" y2="121.92" width="0.1524" layer="91"/>
-<label x="-27.94" y="119.38" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<wire x1="-132.08" y1="121.92" x2="-149.86" y2="121.92" width="0.1524" layer="91"/>
-<label x="-149.86" y="121.92" size="1.778" layer="95"/>
-<pinref part="NEOPIXEL" gate="-2" pin="S"/>
 </segment>
 <segment>
 <pinref part="TALENT_DIM" gate="-3" pin="S"/>
@@ -8423,16 +8411,6 @@ Z = A</text>
 <pinref part="J2" gate="G$1" pin="5V@1"/>
 <wire x1="-119.38" y1="96.52" x2="-132.08" y2="96.52" width="0.1524" layer="91"/>
 <label x="-132.08" y="96.52" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U2" gate="A" pin="VCC"/>
-<wire x1="-15.24" y1="104.14" x2="-22.86" y2="104.14" width="0.1524" layer="91"/>
-<label x="-22.86" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U3" gate="A" pin="VCC"/>
-<wire x1="-15.24" y1="60.96" x2="-27.94" y2="60.96" width="0.1524" layer="91"/>
-<label x="-27.94" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V@2" class="0">
@@ -8501,6 +8479,48 @@ Z = A</text>
 <pinref part="CAM12" gate="-1" pin="S"/>
 <wire x1="55.88" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
 <label x="43.18" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VCC" class="0">
+<segment>
+<pinref part="EXTPOWER" gate="-2" pin="S"/>
+<wire x1="-137.16" y1="154.94" x2="-152.4" y2="154.94" width="0.1524" layer="91"/>
+<label x="-152.4" y="154.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="JP4" gate="A" pin="2"/>
+<wire x1="-132.08" y1="139.7" x2="-149.86" y2="139.7" width="0.1524" layer="91"/>
+<label x="-149.86" y="139.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-132.08" y1="121.92" x2="-149.86" y2="121.92" width="0.1524" layer="91"/>
+<label x="-149.86" y="121.92" size="1.778" layer="95"/>
+<pinref part="NEOPIXEL" gate="-2" pin="S"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="A" pin="3"/>
+<wire x1="-66.04" y1="137.16" x2="-66.04" y2="119.38" width="0.1524" layer="91"/>
+<label x="-66.04" y="119.38" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U1" gate="A" pin="VCC"/>
+<wire x1="-15.24" y1="147.32" x2="-22.86" y2="147.32" width="0.1524" layer="91"/>
+<label x="-22.86" y="147.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U2" gate="A" pin="VCC"/>
+<wire x1="-15.24" y1="104.14" x2="-22.86" y2="104.14" width="0.1524" layer="91"/>
+<label x="-22.86" y="104.14" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U3" gate="A" pin="VCC"/>
+<wire x1="-15.24" y1="60.96" x2="-27.94" y2="60.96" width="0.1524" layer="91"/>
+<label x="-27.94" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="-30.48" y1="127" x2="-30.48" y2="121.92" width="0.1524" layer="91"/>
+<label x="-27.94" y="119.38" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
