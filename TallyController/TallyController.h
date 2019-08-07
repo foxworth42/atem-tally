@@ -34,9 +34,9 @@ IPAddress switcherIp(172, 20, 1, 240);
 #define CAM10 38
 #define CAM11 44
 #define CAM12 40
-#define OP_DIMMER_PIN       0   // Global brightness pot for rear LED
-#define TALENT_DIMMER_PIN   1   // Global brightness pot for front LED
-#define TALENT_PREVIEW_PIN  16  // Toggle displaying preview indicator to talent.
+#define OP_DIMMER_PIN       0   // Analog 0 - Global brightness pot for rear LED
+#define TALENT_DIMMER_PIN   1   // Analog 1 - Global brightness pot for front LED
+#define TALENT_PREVIEW_PIN  16  // Analog 2 - Toggle displaying preview indicator to talent.
 //#define XBEE_In             11
 //#define XBEE_Out            12
 //#define NEOPIXEL            13
