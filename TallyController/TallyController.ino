@@ -118,20 +118,21 @@ void setup() {
 void loop() {
   AtemSwitcher.runLoop();
 
-  showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
+  bool showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
+
+  int talentDimmer = map(analogRead(TALENT_DIMMER_PIN), 0, 1023, 0, 255);
+  int opDimmer = map(analogRead(OP_DIMMER_PIN), 0, 1023, 0, 255);
 
   for (uint8_t i = 0; i < NUMBER_OF_TALLY_LIGHTS; i++) {
-    setTalleyLight(i, (int) analogRead(TALENT_DIMMER_PIN) / BRIGHTNESS_RATIO, (int) analogRead(OP_DIMMER_PIN) / BRIGHTNESS_RATIO);
+    setTalleyLight(i, showPreviewToTalent, talentDimmer, opDimmer);
   }
-  
-  delay(50);
 }
 
-void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
+void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, int opBrightness) {
   int tally = AtemSwitcher.getTallyByIndexTallyFlags(camera);
 
   if(camera + 1 == REMOTE_CAMERA) {
-    setRemoteTally(tally);
+    setRemoteTally(tally, showPreviewToTalent);
   }
   
   if(camera > 9) {
@@ -160,10 +161,11 @@ void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
       tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(0,opBrightness,0));
       if(showPreviewToTalent == true) {
         tallyUnit[camera].fill(tallyUnit[camera].Color(0,talentBrightness,0), 1);
+        lcd.print("P");
       } else {
         tallyUnit[camera].fill(tallyUnit[camera].Color(0,0,0), 1);
+        lcd.print("p");
       }
-      lcd.print("P");
       break;
     case 3:
       tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(0,0,opBrightness));
@@ -178,31 +180,38 @@ void setTalleyLight(int camera, int talentBrightness, int opBrightness) {
   tallyUnit[camera].show();
 }
 
-void setRemoteTally(int tally) {
-  lcd.setCursor(9,3);
-  
-  switch(tally) {
-    case 1:
-      lcd.print("L");
-      XBee.write('L');
-      break;
-    case 2:
-      if(showPreviewToTalent == true) {
-        lcd.print("P");
-        XBee.write('T');
-      } else {
-        lcd.print("p");
-        XBee.write('P');
-      }
-      break;
-    case 3:
-      lcd.print("B");
-      XBee.write('B');
-      break;
-    default:
-      lcd.print(" ");
-      XBee.write('C');
-      break;
+unsigned long time_now = 0;
+void setRemoteTally(int tally, bool showPreviewToTalent) {
+  // Only running the XBee at 9600baud, so adding a delay to the remote communication
+  // so we don't overload the serial connection.
+  if(millis() > time_now + 50) {
+    time_now = millis();
+    
+    lcd.setCursor(9,3);
+    
+    switch(tally) {
+      case 1:
+        lcd.print("L");
+        XBee.write('L');
+        break;
+      case 2:
+        if(showPreviewToTalent == true) {
+          lcd.print("P");
+          XBee.write('T');
+        } else {
+          lcd.print("p");
+          XBee.write('P');
+        }
+        break;
+      case 3:
+        lcd.print("B");
+        XBee.write('B');
+        break;
+      default:
+        lcd.print(" ");
+        XBee.write('C');
+        break;
+    }
   }
 }
 
