@@ -13,7 +13,7 @@ byte ip[] = { 172, 20, 1, 239 };
 IPAddress switcherIp(172, 20, 1, 240);
 
 #define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
-#define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel for talent (7 LEDs)
+#define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel (7 LEDs) for talent
 //#define NUMBER_OF_TALLY_LIGHTS  8   // 8 for ATEM Television Studio, 10 for ATEM 1M/E
 
 // Uno test unit assignments

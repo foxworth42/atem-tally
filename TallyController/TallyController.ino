@@ -184,7 +184,7 @@ unsigned long time_now = 0;
 void setRemoteTally(int tally, bool showPreviewToTalent) {
   // Only running the XBee at 9600baud, so adding a delay to the remote communication
   // so we don't overload the serial connection.
-  if(millis() > time_now + 50) {
+  if(millis() > time_now + 100) {
     time_now = millis();
     
     lcd.setCursor(9,3);
