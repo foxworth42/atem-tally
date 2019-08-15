@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="15" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -144,7 +144,6 @@
 </layers>
 <board>
 <plain>
-<wire x1="24.51" y1="18.13" x2="46.1" y2="18.13" width="0.1524" layer="25"/>
 <text x="43.18" y="20.32" size="1.778" layer="26" rot="MR0">Fits Hammond
 1551H</text>
 <text x="2.5" y="20" size="0.6096" layer="25" align="top-center">GND</text>
@@ -156,6 +155,9 @@
 <text x="45.981" y="9.84" size="0.6096" layer="25" rot="R90">DOUT</text>
 <text x="16.764" y="14.859" size="1.016" layer="25">RS485 Neopixel
 Driver Over Ethernet</text>
+<wire x1="24.638" y1="28.194" x2="46.101" y2="28.194" width="0.1524" layer="25"/>
+<wire x1="46.101" y1="28.194" x2="46.101" y2="18.161" width="0.1524" layer="25"/>
+<wire x1="46.101" y1="18.161" x2="24.892" y2="18.161" width="0.1524" layer="25"/>
 </plain>
 <libraries>
 <library name="con-molex" urn="urn:adsk.eagle:library:165">
@@ -1742,30 +1744,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="18.66" y1="20.71" x2="24.51" y2="20.71" width="0.508" layer="1"/>
 <wire x1="12.7" y1="26.67" x2="18.66" y2="20.71" width="0.508" layer="1"/>
 </signal>
-<signal name="RS485+">
-<contactref element="R1" pad="1"/>
-<contactref element="IC1" pad="7"/>
-<contactref element="J1" pad="1"/>
-<wire x1="21.74" y1="5.08" x2="25.55" y2="8.89" width="0.3048" layer="1"/>
-<wire x1="29.86" y1="6.97" x2="29.86" y2="2.19" width="0.3048" layer="1"/>
-<wire x1="25.55" y1="8.89" x2="27.94" y2="8.89" width="0.3048" layer="1"/>
-<wire x1="27.94" y1="8.89" x2="29.86" y2="6.97" width="0.3048" layer="1"/>
-<wire x1="29.86" y1="2.19" x2="34.02" y2="6.35" width="0.3048" layer="1"/>
-<wire x1="34.02" y1="6.35" x2="36.83" y2="6.35" width="0.3048" layer="1"/>
-<wire x1="36.83" y1="6.35" x2="38.31" y2="7.83" width="0.3048" layer="1"/>
-<wire x1="38.31" y1="7.83" x2="38.31" y2="8.62" width="0.3048" layer="1"/>
-</signal>
-<signal name="RS485-">
-<contactref element="R1" pad="2"/>
-<contactref element="IC1" pad="6"/>
-<contactref element="J1" pad="2"/>
-<wire x1="20.72" y1="6.86" x2="22.1" y2="6.86" width="0.3048" layer="1"/>
-<wire x1="27.59" y1="12.35" x2="29.86" y2="12.35" width="0.3048" layer="1"/>
-<wire x1="22.1" y1="6.86" x2="27.59" y2="12.35" width="0.3048" layer="1"/>
-<wire x1="29.86" y1="12.35" x2="33.37" y2="12.35" width="0.3048" layer="1"/>
-<wire x1="35.77" y1="9.95" x2="35.77" y2="8.62" width="0.3048" layer="1"/>
-<wire x1="33.37" y1="12.35" x2="35.77" y2="9.95" width="0.3048" layer="1"/>
-</signal>
 <signal name="NEODATA">
 <contactref element="R2" pad="1"/>
 <contactref element="IC1" pad="1"/>
@@ -1776,10 +1754,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="14.8" y1="16.51" x2="14.72" y2="16.59" width="0.3048" layer="16"/>
 <wire x1="40.85" y1="17.57" x2="39.37" y2="19.05" width="0.3048" layer="16"/>
 </signal>
-<signal name="DATA2+">
+<signal name="DATA2B">
 <contactref element="J1" pad="3"/>
 </signal>
-<signal name="DATA2-">
+<signal name="DATA2A">
 <contactref element="J1" pad="6"/>
 </signal>
 <signal name="LED2">
@@ -1801,6 +1779,31 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="4.56" y1="16.59" x2="4.56" y2="17.26" width="0.3048" layer="16"/>
 <wire x1="7.62" y1="20.32" x2="7.62" y2="23.59" width="0.3048" layer="16"/>
 <wire x1="4.56" y1="17.26" x2="7.62" y2="20.32" width="0.3048" layer="16"/>
+</signal>
+<signal name="RS485B">
+<contactref element="J1" pad="1"/>
+<contactref element="IC1" pad="7"/>
+<contactref element="R1" pad="1"/>
+<wire x1="29.86" y1="6.97" x2="29.86" y2="2.19" width="0.3048" layer="1"/>
+<wire x1="25.55" y1="8.89" x2="27.94" y2="8.89" width="0.3048" layer="1"/>
+<wire x1="27.94" y1="8.89" x2="29.86" y2="6.97" width="0.3048" layer="1"/>
+<wire x1="29.86" y1="2.19" x2="34.02" y2="6.35" width="0.3048" layer="1"/>
+<wire x1="34.02" y1="6.35" x2="36.83" y2="6.35" width="0.3048" layer="1"/>
+<wire x1="36.83" y1="6.35" x2="38.2905" y2="7.8105" width="0.3048" layer="1"/>
+<wire x1="21.74" y1="5.08" x2="25.55" y2="8.89" width="0.3048" layer="1"/>
+<wire x1="38.31" y1="8.62" x2="38.31" y2="7.83" width="0.3048" layer="1"/>
+<wire x1="38.31" y1="7.83" x2="38.2905" y2="7.8105" width="0.3048" layer="1"/>
+</signal>
+<signal name="RS485A">
+<contactref element="J1" pad="2"/>
+<contactref element="IC1" pad="6"/>
+<contactref element="R1" pad="2"/>
+<wire x1="27.59" y1="12.35" x2="29.86" y2="12.35" width="0.3048" layer="1"/>
+<wire x1="22.1" y1="6.86" x2="27.59" y2="12.35" width="0.3048" layer="1"/>
+<wire x1="29.86" y1="12.35" x2="33.37" y2="12.35" width="0.3048" layer="1"/>
+<wire x1="35.77" y1="9.95" x2="33.37" y2="12.35" width="0.3048" layer="1"/>
+<wire x1="35.77" y1="8.62" x2="35.77" y2="9.95" width="0.3048" layer="1"/>
+<wire x1="20.72" y1="6.86" x2="22.1" y2="6.86" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

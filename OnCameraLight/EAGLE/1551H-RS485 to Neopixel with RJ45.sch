@@ -5928,42 +5928,6 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <label x="134.62" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RS485+" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="124.46" y1="124.46" x2="116.84" y2="124.46" width="0.1524" layer="91"/>
-<label x="116.84" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="B"/>
-<wire x1="91.44" y1="134.62" x2="104.14" y2="134.62" width="0.1524" layer="91"/>
-<label x="96.52" y="134.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="88.9" y1="87.63" x2="106.68" y2="87.63" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="87.63" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
-<label x="91.44" y="88.9" size="1.778" layer="95" align="center-left"/>
-</segment>
-</net>
-<net name="RS485-" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="124.46" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
-<label x="134.62" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="A"/>
-<wire x1="91.44" y1="137.16" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
-<label x="96.52" y="137.16" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="88.9" y1="85.09" x2="106.68" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="85.09" x2="106.68" y2="86.36" width="0.1524" layer="91"/>
-<label x="91.44" y="86.36" size="1.778" layer="95" align="center-left"/>
-</segment>
-</net>
 <net name="VCC" class="0">
 <segment>
 <pinref part="NEOPIXEL-T" gate="-2" pin="S"/>
@@ -6011,7 +5975,7 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <label x="55.88" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DATA2+" class="0">
+<net name="DATA2B" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="88.9" y1="82.55" x2="106.68" y2="82.55" width="0.1524" layer="91"/>
@@ -6019,7 +5983,7 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <label x="91.44" y="83.82" size="1.778" layer="95" align="center-left"/>
 </segment>
 </net>
-<net name="DATA2-" class="0">
+<net name="DATA2A" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
 <wire x1="88.9" y1="74.93" x2="106.68" y2="74.93" width="0.1524" layer="91"/>
@@ -6061,6 +6025,42 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <wire x1="149.86" y1="88.9" x2="134.62" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <label x="134.62" y="88.9" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RS485B" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="88.9" y1="87.63" x2="106.68" y2="87.63" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="87.63" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
+<label x="91.44" y="88.9" size="1.778" layer="95" align="center-left"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="B"/>
+<wire x1="91.44" y1="134.62" x2="104.14" y2="134.62" width="0.1524" layer="91"/>
+<label x="96.52" y="134.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="124.46" x2="116.84" y2="124.46" width="0.1524" layer="91"/>
+<label x="116.84" y="124.46" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RS485A" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="88.9" y1="85.09" x2="106.68" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="85.09" x2="106.68" y2="86.36" width="0.1524" layer="91"/>
+<label x="91.44" y="86.36" size="1.778" layer="95" align="center-left"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="A"/>
+<wire x1="91.44" y1="137.16" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
+<label x="96.52" y="137.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="124.46" x2="142.24" y2="124.46" width="0.1524" layer="91"/>
+<label x="134.62" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

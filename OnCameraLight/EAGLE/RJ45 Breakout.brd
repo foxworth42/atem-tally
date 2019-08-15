@@ -150,8 +150,8 @@
 <wire x1="0" y1="35.55" x2="0" y2="0" width="0" layer="20"/>
 <text x="3.81" y="27.94" size="0.6096" layer="25" rot="R180" align="center-left">PWR+</text>
 <text x="6.35" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">GND</text>
-<text x="10.16" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">Data+</text>
-<text x="12.7" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">Data-</text>
+<text x="10.16" y="27.94" size="1.016" layer="25" rot="R90" align="center-left">B</text>
+<text x="12.7" y="27.94" size="1.016" layer="25" rot="R90" align="center-left">A</text>
 <text x="22.86" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">LED2</text>
 <text x="25.4" y="27.94" size="0.6096" layer="25" align="center-left">LED1</text>
 <hole x="2.54" y="2.54" drill="3.048"/>
@@ -160,8 +160,8 @@
 <hole x="2.54" y="33.02" drill="3.048"/>
 <text x="22.987" y="17.907" size="1.4224" layer="26" rot="MR0">RS485 + Power
 Breakout</text>
-<text x="16.51" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">Data+</text>
-<text x="19.05" y="27.94" size="0.6096" layer="25" rot="R90" align="center-left">Data-</text>
+<text x="16.51" y="27.94" size="1.016" layer="25" rot="R90" align="center-left">B</text>
+<text x="19.05" y="27.94" size="1.016" layer="25" rot="R90" align="center-left">A</text>
 </plain>
 <libraries>
 <library name="con-molex" urn="urn:adsk.eagle:library:165">
@@ -1611,41 +1611,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="19.05" y1="32.512" x2="22.86" y2="28.702" width="0.3048" layer="1"/>
 <wire x1="22.86" y1="28.702" x2="22.86" y2="24.13" width="0.3048" layer="1"/>
 </signal>
-<signal name="DATA2-">
-<contactref element="DATA2" pad="1"/>
-<contactref element="J1" pad="6"/>
-<wire x1="19.05" y1="24.13" x2="17.78" y2="22.86" width="0.3048" layer="1"/>
-<wire x1="17.78" y1="22.86" x2="17.78" y2="7.493" width="0.3048" layer="1"/>
-<wire x1="19.177" y1="6.096" x2="19.177" y2="4.953" width="0.3048" layer="1"/>
-<wire x1="18.034" y1="3.81" x2="19.177" y2="4.953" width="0.3048" layer="1"/>
-<wire x1="12.694" y1="4.578" x2="13.462" y2="3.81" width="0.3048" layer="1"/>
-<wire x1="12.694" y1="4.578" x2="12.694" y2="6.987" width="0.3048" layer="1"/>
-<wire x1="17.78" y1="7.493" x2="19.177" y2="6.096" width="0.3048" layer="1"/>
-<wire x1="13.462" y1="3.81" x2="18.034" y2="3.81" width="0.3048" layer="1"/>
-</signal>
-<signal name="DATA1+">
-<contactref element="DATA1" pad="2"/>
-<contactref element="J1" pad="1"/>
-<wire x1="10.16" y1="24.13" x2="10.16" y2="21.717" width="0.3048" layer="16"/>
-<wire x1="15.748" y1="6.60735" x2="17.14835" y2="5.207" width="0.3048" layer="16"/>
-<wire x1="17.14835" y1="5.207" x2="17.774" y2="5.207" width="0.3048" layer="16"/>
-<wire x1="10.16" y1="21.717" x2="15.748" y2="16.129" width="0.3048" layer="16"/>
-<wire x1="15.748" y1="16.129" x2="15.748" y2="6.60735" width="0.3048" layer="16"/>
-</signal>
-<signal name="DATA2+">
-<contactref element="DATA2" pad="2"/>
-<contactref element="J1" pad="3"/>
-<wire x1="16.51" y1="24.13" x2="15.748" y2="23.368" width="0.3048" layer="1"/>
-<wire x1="15.748" y1="23.368" x2="15.748" y2="5.211" width="0.3048" layer="1"/>
-<wire x1="15.748" y1="5.211" x2="15.744" y2="5.207" width="0.3048" layer="1"/>
-</signal>
-<signal name="DATA1-">
-<contactref element="DATA1" pad="1"/>
-<contactref element="J1" pad="2"/>
-<wire x1="12.7" y1="24.13" x2="12.7" y2="20.701" width="0.3048" layer="16"/>
-<wire x1="16.754" y1="16.647" x2="16.754" y2="6.987" width="0.3048" layer="16"/>
-<wire x1="12.7" y1="20.701" x2="16.754" y2="16.647" width="0.3048" layer="16"/>
-</signal>
 <signal name="VCC">
 <contactref element="J1" pad="4"/>
 <contactref element="J1" pad="5"/>
@@ -1669,6 +1634,40 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="R1" pad="2"/>
 <wire x1="25.019" y1="8.255" x2="22.346" y2="8.255" width="0.3048" layer="16"/>
 <wire x1="22.346" y1="8.255" x2="18.794" y2="11.807" width="0.3048" layer="16"/>
+</signal>
+<signal name="DATA1B">
+<contactref element="J1" pad="1"/>
+<contactref element="DATA1" pad="2"/>
+<wire x1="10.16" y1="24.13" x2="10.16" y2="21.717" width="0.3048" layer="16"/>
+<wire x1="17.14835" y1="5.207" x2="15.748" y2="6.60735" width="0.3048" layer="16"/>
+<wire x1="10.16" y1="21.717" x2="15.748" y2="16.129" width="0.3048" layer="16"/>
+<wire x1="15.748" y1="16.129" x2="15.748" y2="6.60735" width="0.3048" layer="16"/>
+<wire x1="17.774" y1="5.207" x2="17.14835" y2="5.207" width="0.3048" layer="16"/>
+</signal>
+<signal name="DATA1A">
+<contactref element="J1" pad="2"/>
+<contactref element="DATA1" pad="1"/>
+<wire x1="12.7" y1="24.13" x2="12.7" y2="20.701" width="0.3048" layer="16"/>
+<wire x1="16.754" y1="16.647" x2="12.7" y2="20.701" width="0.3048" layer="16"/>
+<wire x1="16.754" y1="6.987" x2="16.754" y2="16.647" width="0.3048" layer="16"/>
+</signal>
+<signal name="DATA2B">
+<contactref element="J1" pad="3"/>
+<contactref element="DATA2" pad="2"/>
+<wire x1="15.744" y1="5.207" x2="15.744" y2="23.364" width="0.3048" layer="1"/>
+<wire x1="15.744" y1="23.364" x2="16.51" y2="24.13" width="0.3048" layer="1"/>
+</signal>
+<signal name="DATA2A">
+<contactref element="J1" pad="6"/>
+<contactref element="DATA2" pad="1"/>
+<wire x1="19.05" y1="24.13" x2="17.78" y2="22.86" width="0.3048" layer="1"/>
+<wire x1="17.78" y1="22.86" x2="17.78" y2="7.493" width="0.3048" layer="1"/>
+<wire x1="19.177" y1="6.096" x2="19.177" y2="4.953" width="0.3048" layer="1"/>
+<wire x1="18.034" y1="3.81" x2="19.177" y2="4.953" width="0.3048" layer="1"/>
+<wire x1="12.694" y1="4.578" x2="13.462" y2="3.81" width="0.3048" layer="1"/>
+<wire x1="17.78" y1="7.493" x2="19.177" y2="6.096" width="0.3048" layer="1"/>
+<wire x1="13.462" y1="3.81" x2="18.034" y2="3.81" width="0.3048" layer="1"/>
+<wire x1="12.694" y1="6.987" x2="12.694" y2="4.578" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

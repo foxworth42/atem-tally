@@ -1048,18 +1048,6 @@ LETTER landscape</description>
 <pinref part="J1" gate="G$1" pin="7"/>
 </segment>
 </net>
-<net name="C4DATA1-" class="0">
-<segment>
-<pinref part="CAM4DATA1" gate="-1" pin="S"/>
-<wire x1="88.9" y1="127" x2="76.2" y2="127" width="0.1524" layer="91"/>
-<label x="76.2" y="127" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="60.96" x2="43.18" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="38"/>
-<label x="43.18" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="VCC" class="0">
 <segment>
 <pinref part="POWER" gate="-2" pin="S"/>
@@ -1105,186 +1093,6 @@ LETTER landscape</description>
 <wire x1="58.42" y1="154.94" x2="43.18" y2="154.94" width="0.1524" layer="91"/>
 <label x="43.18" y="154.94" size="1.778" layer="95"/>
 <pinref part="J1" gate="G$1" pin="4"/>
-</segment>
-</net>
-<net name="C1DATA1+" class="0">
-<segment>
-<pinref part="CAM1DATA1" gate="-2" pin="S"/>
-<wire x1="88.9" y1="147.32" x2="76.2" y2="147.32" width="0.1524" layer="91"/>
-<label x="76.2" y="147.32" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="162.56" x2="43.18" y2="162.56" width="0.1524" layer="91"/>
-<label x="43.18" y="162.56" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="C1DATA1-" class="0">
-<segment>
-<pinref part="CAM1DATA1" gate="-1" pin="S"/>
-<wire x1="88.9" y1="149.86" x2="76.2" y2="149.86" width="0.1524" layer="91"/>
-<label x="76.2" y="149.86" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="160.02" x2="43.18" y2="160.02" width="0.1524" layer="91"/>
-<label x="43.18" y="160.02" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="C1DATA2+" class="0">
-<segment>
-<pinref part="CAM1DATA2" gate="-2" pin="S"/>
-<wire x1="88.9" y1="111.76" x2="76.2" y2="111.76" width="0.1524" layer="91"/>
-<label x="76.2" y="111.76" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="157.48" x2="43.18" y2="157.48" width="0.1524" layer="91"/>
-<label x="43.18" y="157.48" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-</segment>
-</net>
-<net name="C1DATA2-" class="0">
-<segment>
-<pinref part="CAM1DATA2" gate="-1" pin="S"/>
-<wire x1="88.9" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
-<label x="76.2" y="114.3" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="149.86" x2="43.18" y2="149.86" width="0.1524" layer="91"/>
-<label x="43.18" y="149.86" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="6"/>
-</segment>
-</net>
-<net name="C2DATA1-" class="0">
-<segment>
-<pinref part="CAM2DATA1" gate="-1" pin="S"/>
-<wire x1="88.9" y1="142.24" x2="76.2" y2="142.24" width="0.1524" layer="91"/>
-<label x="76.2" y="142.24" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="127" x2="43.18" y2="127" width="0.1524" layer="91"/>
-<label x="43.18" y="127" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="14"/>
-</segment>
-</net>
-<net name="C2DATA1+" class="0">
-<segment>
-<pinref part="CAM2DATA1" gate="-2" pin="S"/>
-<wire x1="88.9" y1="139.7" x2="76.2" y2="139.7" width="0.1524" layer="91"/>
-<label x="76.2" y="139.7" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="129.54" x2="43.18" y2="129.54" width="0.1524" layer="91"/>
-<label x="43.18" y="129.54" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="13"/>
-</segment>
-</net>
-<net name="C2DATA2+" class="0">
-<segment>
-<pinref part="CAM2DATA2" gate="-2" pin="S"/>
-<wire x1="88.9" y1="104.14" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
-<label x="76.2" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="124.46" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
-<label x="43.18" y="124.46" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="15"/>
-</segment>
-</net>
-<net name="C2DATA2-" class="0">
-<segment>
-<pinref part="CAM2DATA2" gate="-1" pin="S"/>
-<wire x1="88.9" y1="106.68" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
-<label x="76.2" y="106.68" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
-<label x="43.18" y="116.84" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="18"/>
-</segment>
-</net>
-<net name="C3DATA1+" class="0">
-<segment>
-<pinref part="CAM3DATA1" gate="-2" pin="S"/>
-<wire x1="88.9" y1="132.08" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
-<label x="76.2" y="132.08" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="96.52" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
-<label x="43.18" y="96.52" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="25"/>
-</segment>
-</net>
-<net name="C3DATA1-" class="0">
-<segment>
-<pinref part="CAM3DATA1" gate="-1" pin="S"/>
-<wire x1="88.9" y1="134.62" x2="76.2" y2="134.62" width="0.1524" layer="91"/>
-<label x="76.2" y="134.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
-<label x="43.18" y="93.98" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="26"/>
-</segment>
-</net>
-<net name="C3DATA2+" class="0">
-<segment>
-<pinref part="CAM3DATA2" gate="-2" pin="S"/>
-<wire x1="88.9" y1="96.52" x2="76.2" y2="96.52" width="0.1524" layer="91"/>
-<label x="76.2" y="96.52" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="91.44" x2="43.18" y2="91.44" width="0.1524" layer="91"/>
-<label x="43.18" y="91.44" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="27"/>
-</segment>
-</net>
-<net name="C3DATA2-" class="0">
-<segment>
-<pinref part="CAM3DATA2" gate="-1" pin="S"/>
-<wire x1="88.9" y1="99.06" x2="76.2" y2="99.06" width="0.1524" layer="91"/>
-<label x="76.2" y="99.06" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="83.82" x2="43.18" y2="83.82" width="0.1524" layer="91"/>
-<label x="43.18" y="83.82" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="30"/>
-</segment>
-</net>
-<net name="C4DATA1+" class="0">
-<segment>
-<pinref part="CAM4DATA1" gate="-2" pin="S"/>
-<wire x1="88.9" y1="124.46" x2="76.2" y2="124.46" width="0.1524" layer="91"/>
-<label x="76.2" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="37"/>
-<label x="43.18" y="63.5" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="C4DATA2+" class="0">
-<segment>
-<pinref part="CAM4DATA2" gate="-2" pin="S"/>
-<wire x1="88.9" y1="88.9" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
-<label x="76.2" y="88.9" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="39"/>
-<label x="43.18" y="58.42" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="C4DATA2-" class="0">
-<segment>
-<pinref part="CAM4DATA2" gate="-1" pin="S"/>
-<wire x1="88.9" y1="91.44" x2="76.2" y2="91.44" width="0.1524" layer="91"/>
-<label x="76.2" y="91.44" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="58.42" y1="50.8" x2="43.18" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="42"/>
-<label x="43.18" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED4A" class="0">
@@ -1341,6 +1149,198 @@ LETTER landscape</description>
 <wire x1="58.42" y1="134.62" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
 <label x="43.18" y="134.62" size="1.778" layer="95"/>
 <pinref part="J1" gate="G$1" pin="12"/>
+</segment>
+</net>
+<net name="C1DATA1B" class="0">
+<segment>
+<wire x1="58.42" y1="162.56" x2="43.18" y2="162.56" width="0.1524" layer="91"/>
+<label x="43.18" y="162.56" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="CAM1DATA1" gate="-2" pin="S"/>
+<wire x1="88.9" y1="147.32" x2="76.2" y2="147.32" width="0.1524" layer="91"/>
+<label x="76.2" y="147.32" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C1DATA1A" class="0">
+<segment>
+<wire x1="58.42" y1="160.02" x2="43.18" y2="160.02" width="0.1524" layer="91"/>
+<label x="43.18" y="160.02" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="CAM1DATA1" gate="-1" pin="S"/>
+<wire x1="88.9" y1="149.86" x2="76.2" y2="149.86" width="0.1524" layer="91"/>
+<label x="76.2" y="149.86" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C1DATA2B" class="0">
+<segment>
+<wire x1="58.42" y1="157.48" x2="43.18" y2="157.48" width="0.1524" layer="91"/>
+<label x="43.18" y="157.48" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="3"/>
+</segment>
+<segment>
+<pinref part="CAM1DATA2" gate="-2" pin="S"/>
+<wire x1="88.9" y1="111.76" x2="76.2" y2="111.76" width="0.1524" layer="91"/>
+<label x="76.2" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C1DATA2A" class="0">
+<segment>
+<wire x1="58.42" y1="149.86" x2="43.18" y2="149.86" width="0.1524" layer="91"/>
+<label x="43.18" y="149.86" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<pinref part="CAM1DATA2" gate="-1" pin="S"/>
+<wire x1="88.9" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
+<label x="76.2" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C2DATA1B" class="0">
+<segment>
+<wire x1="58.42" y1="129.54" x2="43.18" y2="129.54" width="0.1524" layer="91"/>
+<label x="43.18" y="129.54" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="13"/>
+</segment>
+<segment>
+<pinref part="CAM2DATA1" gate="-2" pin="S"/>
+<wire x1="88.9" y1="139.7" x2="76.2" y2="139.7" width="0.1524" layer="91"/>
+<label x="76.2" y="139.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C2DATA1A" class="0">
+<segment>
+<wire x1="58.42" y1="127" x2="43.18" y2="127" width="0.1524" layer="91"/>
+<label x="43.18" y="127" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="14"/>
+</segment>
+<segment>
+<pinref part="CAM2DATA1" gate="-1" pin="S"/>
+<wire x1="88.9" y1="142.24" x2="76.2" y2="142.24" width="0.1524" layer="91"/>
+<label x="76.2" y="142.24" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C2DATA2B" class="0">
+<segment>
+<wire x1="58.42" y1="124.46" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
+<label x="43.18" y="124.46" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="15"/>
+</segment>
+<segment>
+<pinref part="CAM2DATA2" gate="-2" pin="S"/>
+<wire x1="88.9" y1="104.14" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
+<label x="76.2" y="104.14" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C2DATA2A" class="0">
+<segment>
+<wire x1="58.42" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
+<label x="43.18" y="116.84" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="18"/>
+</segment>
+<segment>
+<pinref part="CAM2DATA2" gate="-1" pin="S"/>
+<wire x1="88.9" y1="106.68" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
+<label x="76.2" y="106.68" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C3DATA1B" class="0">
+<segment>
+<wire x1="58.42" y1="96.52" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
+<label x="43.18" y="96.52" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="25"/>
+</segment>
+<segment>
+<pinref part="CAM3DATA1" gate="-2" pin="S"/>
+<wire x1="88.9" y1="132.08" x2="76.2" y2="132.08" width="0.1524" layer="91"/>
+<label x="76.2" y="132.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C3DATA1A" class="0">
+<segment>
+<wire x1="58.42" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
+<label x="43.18" y="93.98" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="26"/>
+</segment>
+<segment>
+<pinref part="CAM3DATA1" gate="-1" pin="S"/>
+<wire x1="88.9" y1="134.62" x2="76.2" y2="134.62" width="0.1524" layer="91"/>
+<label x="76.2" y="134.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C3DATA2B" class="0">
+<segment>
+<wire x1="58.42" y1="91.44" x2="43.18" y2="91.44" width="0.1524" layer="91"/>
+<label x="43.18" y="91.44" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="27"/>
+</segment>
+<segment>
+<pinref part="CAM3DATA2" gate="-2" pin="S"/>
+<wire x1="88.9" y1="96.52" x2="76.2" y2="96.52" width="0.1524" layer="91"/>
+<label x="76.2" y="96.52" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C3DATA2A" class="0">
+<segment>
+<wire x1="58.42" y1="83.82" x2="43.18" y2="83.82" width="0.1524" layer="91"/>
+<label x="43.18" y="83.82" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="30"/>
+</segment>
+<segment>
+<pinref part="CAM3DATA2" gate="-1" pin="S"/>
+<wire x1="88.9" y1="99.06" x2="76.2" y2="99.06" width="0.1524" layer="91"/>
+<label x="76.2" y="99.06" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C4DATA1B" class="0">
+<segment>
+<wire x1="58.42" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="37"/>
+<label x="43.18" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM4DATA1" gate="-2" pin="S"/>
+<wire x1="88.9" y1="124.46" x2="76.2" y2="124.46" width="0.1524" layer="91"/>
+<label x="76.2" y="124.46" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C4DATA1A" class="0">
+<segment>
+<wire x1="58.42" y1="60.96" x2="43.18" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="38"/>
+<label x="43.18" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM4DATA1" gate="-1" pin="S"/>
+<wire x1="88.9" y1="127" x2="76.2" y2="127" width="0.1524" layer="91"/>
+<label x="76.2" y="127" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C4DATA2B" class="0">
+<segment>
+<wire x1="58.42" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="39"/>
+<label x="43.18" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM4DATA2" gate="-2" pin="S"/>
+<wire x1="88.9" y1="88.9" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
+<label x="76.2" y="88.9" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="C4DATA2A" class="0">
+<segment>
+<wire x1="58.42" y1="50.8" x2="43.18" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="42"/>
+<label x="43.18" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CAM4DATA2" gate="-1" pin="S"/>
+<wire x1="88.9" y1="91.44" x2="76.2" y2="91.44" width="0.1524" layer="91"/>
+<label x="76.2" y="91.44" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

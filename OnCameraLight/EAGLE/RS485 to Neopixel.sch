@@ -5486,40 +5486,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="129.54" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RS485+" class="0">
-<segment>
-<pinref part="RS485" gate="-1" pin="S"/>
-<wire x1="134.62" y1="127" x2="119.38" y2="127" width="0.1524" layer="91"/>
-<label x="121.92" y="127" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="106.68" y1="121.92" x2="99.06" y2="121.92" width="0.1524" layer="91"/>
-<label x="99.06" y="121.92" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="B"/>
-<wire x1="91.44" y1="134.62" x2="104.14" y2="134.62" width="0.1524" layer="91"/>
-<label x="96.52" y="134.62" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="RS485-" class="0">
-<segment>
-<pinref part="RS485" gate="-2" pin="S"/>
-<wire x1="134.62" y1="124.46" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
-<label x="121.92" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="121.92" x2="124.46" y2="121.92" width="0.1524" layer="91"/>
-<label x="116.84" y="121.92" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="A"/>
-<wire x1="91.44" y1="137.16" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
-<label x="96.52" y="137.16" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="VCC" class="0">
 <segment>
 <pinref part="NEOPIXEL" gate="-2" pin="S"/>
@@ -5566,6 +5532,40 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="IC1" gate="G$1" pin="R"/>
 <wire x1="66.04" y1="132.08" x2="55.88" y2="132.08" width="0.1524" layer="91"/>
 <label x="55.88" y="132.08" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RS485B" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="B"/>
+<wire x1="91.44" y1="134.62" x2="104.14" y2="134.62" width="0.1524" layer="91"/>
+<label x="96.52" y="134.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="106.68" y1="121.92" x2="99.06" y2="121.92" width="0.1524" layer="91"/>
+<label x="99.06" y="121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="RS485" gate="-2" pin="S"/>
+<wire x1="134.62" y1="124.46" x2="119.38" y2="124.46" width="0.1524" layer="91"/>
+<label x="121.92" y="124.46" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RS485A" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="A"/>
+<wire x1="91.44" y1="137.16" x2="104.14" y2="137.16" width="0.1524" layer="91"/>
+<label x="96.52" y="137.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="116.84" y1="121.92" x2="124.46" y2="121.92" width="0.1524" layer="91"/>
+<label x="116.84" y="121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="RS485" gate="-1" pin="S"/>
+<wire x1="134.62" y1="127" x2="119.38" y2="127" width="0.1524" layer="91"/>
+<label x="121.92" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

@@ -6012,9 +6012,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="91.44" y="83.82" size="1.778" layer="95" align="center-left"/>
 </segment>
 <segment>
-<pinref part="DATA2" gate="-1" pin="S"/>
-<wire x1="149.86" y1="104.14" x2="134.62" y2="104.14" width="0.1524" layer="91"/>
-<label x="134.62" y="104.14" size="1.778" layer="95"/>
+<pinref part="DATA2" gate="-2" pin="S"/>
+<wire x1="149.86" y1="101.6" x2="134.62" y2="101.6" width="0.1524" layer="91"/>
+<label x="134.62" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DATA2A" class="0">
@@ -6025,9 +6025,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="91.44" y="76.2" size="1.778" layer="95" align="center-left"/>
 </segment>
 <segment>
-<pinref part="DATA2" gate="-2" pin="S"/>
-<wire x1="149.86" y1="101.6" x2="134.62" y2="101.6" width="0.1524" layer="91"/>
-<label x="134.62" y="101.6" size="1.778" layer="95"/>
+<pinref part="DATA2" gate="-1" pin="S"/>
+<wire x1="149.86" y1="104.14" x2="134.62" y2="104.14" width="0.1524" layer="91"/>
+<label x="134.62" y="104.14" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
