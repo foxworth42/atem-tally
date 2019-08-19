@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -148,7 +148,11 @@
 <text x="29.21" y="22.225" size="0.6096" layer="25" rot="R90" align="center-right">5V</text>
 <text x="31.75" y="22.225" size="0.6096" layer="25" rot="R90" align="center-right">DOUT</text>
 <text x="34.29" y="22.225" size="0.6096" layer="25" rot="R90" align="center-right">DIN</text>
-<hole x="30.48" y="30.48" drill="8.89"/>
+<hole x="30.48" y="30.48" drill="7.9375"/>
+<text x="20.32" y="48.895" size="1.778" layer="26" rot="MR0">Fits Hammond
+1593K</text>
+<text x="39.37" y="18.415" size="1.27" layer="25">Wireless Tally
+Receiver rev1.0</text>
 </plain>
 <libraries>
 <library name="SparkFun-Boards" urn="urn:adsk.eagle:library:509">
@@ -1985,6 +1989,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
