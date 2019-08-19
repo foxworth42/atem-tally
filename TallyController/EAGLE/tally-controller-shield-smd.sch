@@ -6907,7 +6907,7 @@ LETTER landscape</description>
 <text x="-15.24" y="15.24" size="1.778" layer="94" align="top-left">Arduino Mega Shield for ATEM Tally Controller
 Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch input, 
 2 potentiometer inputs, XBee tranciever headers using regulated breakout.</text>
-<text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.2</text>
+<text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.3</text>
 <text x="-76.2" y="-7.62" size="1.778" layer="97" align="top-left">* The schematic has SCL1/SDA1
 reversed in the component. 
 Footprint is correct.</text>
