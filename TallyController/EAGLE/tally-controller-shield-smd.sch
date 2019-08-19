@@ -862,8 +862,8 @@ Includes 12 channels of RS485 output, 1 NeoPixel output, 4pin I2C output, XBee s
 <wire x1="31.115" y1="1.27" x2="31.75" y2="1.905" width="0.2032" layer="21"/>
 <rectangle x1="21.082" y1="50.546" x2="21.59" y2="51.054" layer="51"/>
 <rectangle x1="18.542" y1="50.546" x2="19.05" y2="51.054" layer="51"/>
-<pad name="SCL1" x="21.336" y="50.8" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="SDA1" x="18.796" y="50.8" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="SDA1" x="21.336" y="50.8" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="SCL1" x="18.796" y="50.8" drill="1.016" diameter="1.8796" rot="R90"/>
 <wire x1="22.5425" y1="51.435" x2="21.9075" y2="52.07" width="0.2032" layer="21"/>
 <wire x1="21.9075" y1="52.07" x2="20.6375" y2="52.07" width="0.2032" layer="21"/>
 <wire x1="20.6375" y1="52.07" x2="20.0025" y2="51.435" width="0.2032" layer="21"/>
@@ -877,8 +877,8 @@ Includes 12 channels of RS485 output, 1 NeoPixel output, 4pin I2C output, XBee s
 <wire x1="20.0025" y1="50.165" x2="20.6375" y2="49.53" width="0.2032" layer="21"/>
 <wire x1="20.6375" y1="49.53" x2="21.9075" y2="49.53" width="0.2032" layer="21"/>
 <wire x1="21.9075" y1="49.53" x2="22.5425" y2="50.165" width="0.2032" layer="21"/>
-<text x="22.0905" y="49.276" size="0.6096" layer="21" font="vector" ratio="12" rot="SR180">SCL</text>
-<text x="19.5505" y="49.276" size="0.6096" layer="21" font="vector" ratio="12" rot="SR180">SDA</text>
+<text x="22.0905" y="49.276" size="0.6096" layer="21" font="vector" ratio="12" rot="SR180">SDA</text>
+<text x="19.5505" y="49.276" size="0.6096" layer="21" font="vector" ratio="12" rot="SR180">SCL</text>
 <text x="31.5976" y="4.6355" size="0.6096" layer="21" font="vector" ratio="12" rot="R180">DREF</text>
 </package>
 <package name="ARDUINO_MEGA-PRO-3.3V">
@@ -1809,8 +1809,8 @@ Includes 12 channels of RS485 output, 1 NeoPixel output, 4pin I2C output, XBee s
 <connect gate="G$1" pin="GND@4" pad="GND@4"/>
 <connect gate="G$1" pin="IOREF" pad="IOREF"/>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
-<connect gate="G$1" pin="SCL1" pad="SCL1"/>
-<connect gate="G$1" pin="SDA1" pad="SDA1"/>
+<connect gate="G$1" pin="SCL1" pad="SDA1"/>
+<connect gate="G$1" pin="SDA1" pad="SCL1"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
@@ -6908,6 +6908,9 @@ LETTER landscape</description>
 Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch input, 
 2 potentiometer inputs, XBee tranciever headers using regulated breakout.</text>
 <text x="71.12" y="-7.62" size="3.81" layer="94" align="top-left">1.2</text>
+<text x="-76.2" y="-7.62" size="1.778" layer="97" align="top-left">* The schematic has SCL1/SDA1
+reversed in the component. 
+Footprint is correct.</text>
 </plain>
 <instances>
 <instance part="J2" gate="G$1" x="-99.06" y="50.8" smashed="yes">
@@ -7620,26 +7623,26 @@ Includes I2C output header, NeoPixel header, 12 RS485 output pairs, 1 switch inp
 </net>
 <net name="MEGASDA1" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="SDA1"/>
-<wire x1="-78.74" y1="-5.08" x2="-63.5" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-76.2" y="-5.08" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-132.08" y1="137.16" x2="-149.86" y2="137.16" width="0.1524" layer="91"/>
 <label x="-149.86" y="137.16" size="1.778" layer="95"/>
 <pinref part="I2C" gate="-3" pin="S"/>
 </segment>
-</net>
-<net name="MEGASCL1" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="SCL1"/>
 <wire x1="-78.74" y1="-2.54" x2="-63.5" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-76.2" y="-2.54" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="MEGASCL1" class="0">
 <segment>
 <wire x1="-132.08" y1="134.62" x2="-149.86" y2="134.62" width="0.1524" layer="91"/>
 <label x="-149.86" y="134.62" size="1.778" layer="95"/>
 <pinref part="I2C" gate="-4" pin="S"/>
+</segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="SDA1"/>
+<wire x1="-78.74" y1="-5.08" x2="-63.5" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-76.2" y="-5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MEGA53" class="0">

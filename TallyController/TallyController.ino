@@ -1,9 +1,9 @@
 #include "TallyController.h"
 
 Adafruit_NeoPixel tallyUnit[12] = {
-  Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM2, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM3, NEO_GRB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM2, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM3, NEO_RGB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM4, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM5, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM6, NEO_GRB + NEO_KHZ800),
@@ -14,15 +14,19 @@ Adafruit_NeoPixel tallyUnit[12] = {
   Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_GRB + NEO_KHZ800)
 };
+
+Adafruit_NeoPixel statusLed(1, STATUS_NEOPIXEL, NEO_RGB + NEO_KHZ800);
 LiquidCrystal_I2C lcd(0x27,20,4);
 SoftwareSerial XBee(XBEE_In, XBEE_Out);  // TX, RX
 ATEMmin AtemSwitcher;
 
 
 void setup() {
-  // disable SD card
   pinMode(4,OUTPUT);
   digitalWrite(4,HIGH);
+  pinMode(10,OUTPUT);
+  digitalWrite(10,HIGH);
+  pinMode(53,OUTPUT);
 
   randomSeed(analogRead(5));
 
@@ -44,8 +48,13 @@ void setup() {
     tallyUnit[i].show();
   }
 
+  statusLed.begin();
+  statusLed.setBrightness(128);
+  statusLed.clear();
+  statusLed.show();
+
   XBee.write("L");
-  setAllTally(tallyUnit[0].Color(128,0,0));
+  setAll(tallyUnit[0].Color(128,0,0));
 
   Serial.println("Initialize Ethernet:");
   lcd.print("Init Ethernet");
@@ -71,7 +80,7 @@ void setup() {
   }
  
   XBee.write("T");
-  setAllTally(tallyUnit[0].Color(0,128,0));
+  setAll(tallyUnit[0].Color(0,128,0));
   
   // print local IP address:
   Serial.print("My IP address: ");
@@ -93,7 +102,7 @@ void setup() {
   AtemSwitcher.connect();
 
   XBee.write("B");
-  setAllTally(tallyUnit[0].Color(0,0,128));
+  setAll(tallyUnit[0].Color(0,0,128));
 
   delay(2000);
 
@@ -106,7 +115,7 @@ void setup() {
   delay(2000);
 
   XBee.write("C");
-  setAllTally(tallyUnit[0].Color(0,0,0));
+  setAll(tallyUnit[0].Color(0,0,0));
 
   lcd.clear();
   lcd.setCursor(0,0);
@@ -215,9 +224,11 @@ void setRemoteTally(int tally, bool showPreviewToTalent) {
   }
 }
 
-void setAllTally(uint32_t color) {
+void setAll(uint32_t color) {
   for (uint8_t i = 0; i < NUMBER_OF_TALLY_LIGHTS; i++) {
     tallyUnit[i].fill(color);
     tallyUnit[i].show();
   }
+  statusLed.fill(color);
+  statusLed.show();
 }
