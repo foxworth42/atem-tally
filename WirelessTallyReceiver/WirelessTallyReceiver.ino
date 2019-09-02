@@ -5,7 +5,7 @@
 
 int intensity = 128;
 
-Adafruit_NeoPixel pixel(LED_COUNT, 9, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel pixel(LED_COUNT, 9, NEO_RGB + NEO_KHZ800);
 SoftwareSerial XBee(3, 2);
 char tally = 'N';
 

@@ -1,18 +1,19 @@
 #include "TallyController.h"
 
+// 8mm/5mm Neopixels use NEO_RGB, adjust accordingly if you use something else
 Adafruit_NeoPixel tallyUnit[12] = {
   Adafruit_NeoPixel(LED_COUNT, CAM1, NEO_RGB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM2, NEO_RGB + NEO_KHZ800),
   Adafruit_NeoPixel(LED_COUNT, CAM3, NEO_RGB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM4, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM5, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM6, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM7, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM8, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM9, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM10, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_GRB + NEO_KHZ800)
+  Adafruit_NeoPixel(LED_COUNT, CAM4, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM5, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM6, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM7, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM8, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM9, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM10, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM11, NEO_RGB + NEO_KHZ800),
+  Adafruit_NeoPixel(LED_COUNT, CAM12, NEO_RGB + NEO_KHZ800)
 };
 
 Adafruit_NeoPixel statusLed(1, STATUS_NEOPIXEL, NEO_RGB + NEO_KHZ800);
