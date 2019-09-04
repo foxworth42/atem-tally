@@ -42,7 +42,7 @@ void setup() {
   lcd.backlight();
   lcd.clear();
 
-  for (uint8_t i = 0; i < NUMBER_OF_TALLY_LIGHTS; i++) {
+  for (uint8_t i = 0; i < numberOfTallyLights; i++) {
     tallyUnit[i].begin();
     tallyUnit[i].setBrightness(50);
     tallyUnit[i].clear();
@@ -112,6 +112,8 @@ void setup() {
   lcd.print("ATEM IP Address:");
   lcd.setCursor(0,1);
   lcd.print(switcherIp);
+  Serial.print("ATEM IP Address: ");
+  Serial.println(switcherIp);
 
   delay(2000);
 
@@ -128,12 +130,18 @@ void setup() {
 void loop() {
   AtemSwitcher.runLoop();
 
+  // Automatically set the number of tally lights up to 12.
+  numberOfTallyLights = AtemSwitcher.getTallyByIndexSources();
+  if(numberOfTallyLights > MAX_TALLY_LIGHTS) {
+    numberOfTallyLights = MAX_TALLY_LIGHTS;
+  }
+
   bool showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
 
   int talentDimmer = map(analogRead(TALENT_DIMMER_PIN), 0, 1023, 0, 255);
   int opDimmer = map(analogRead(OP_DIMMER_PIN), 0, 1023, 0, 255);
 
-  for (uint8_t i = 0; i < NUMBER_OF_TALLY_LIGHTS; i++) {
+  for (uint8_t i = 0; i < numberOfTallyLights; i++) {
     setTalleyLight(i, showPreviewToTalent, talentDimmer, opDimmer);
   }
 }
@@ -226,7 +234,7 @@ void setRemoteTally(int tally, bool showPreviewToTalent) {
 }
 
 void setAll(uint32_t color) {
-  for (uint8_t i = 0; i < NUMBER_OF_TALLY_LIGHTS; i++) {
+  for (uint8_t i = 0; i < numberOfTallyLights; i++) {
     tallyUnit[i].fill(color);
     tallyUnit[i].show();
   }

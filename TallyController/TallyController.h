@@ -14,7 +14,8 @@ IPAddress switcherIp(172, 20, 1, 240);
 
 #define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
 #define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel (7 LEDs) for talent
-#define NUMBER_OF_TALLY_LIGHTS  8   // 8 for ATEM Television Studio, 10 for ATEM 1M/E
+int numberOfTallyLights = 8;    // Sane default value (number for ATEM Television Stufio)
+#define MAX_TALLY_LIGHTS    12  // Maximum number of tally lights the tally controller shield supports.
 
 // Uno test unit assignments
 //#define NUMBER_OF_TALLY_LIGHTS  4
