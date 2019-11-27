@@ -9,12 +9,12 @@
 #include <Wire.h>
 
 byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x04 };
-byte ip[] = { 172, 20, 1, 239 };
-IPAddress switcherIp(172, 20, 1, 240);
+byte ip[] = { 172, 21, 1, 241 };
+IPAddress switcherIp(172, 21, 1, 250);
 
-#define REMOTE_CAMERA       4   // Which camera to assign the remote tally light to.
-#define LED_COUNT           8   // Single NeoPixel for operator, NeoPixel Jewel (7 LEDs) for talent
-int numberOfTallyLights = 8;    // Sane default value (number for ATEM Television Stufio)
+#define REMOTE_CAMERA       5   // Which camera to assign the remote tally light to.
+#define LED_COUNT           2   // 1 for operator, 1 for talent
+int numberOfTallyLights = 8;    // Sane default value (number for ATEM Television Studio)
 #define MAX_TALLY_LIGHTS    12  // Maximum number of tally lights the tally controller shield supports.
 
 // Uno test unit assignments

@@ -15,9 +15,17 @@ void setup() {
   pixel.clear();
   pixel.show();
 
-  pixel.setPixelColor(0, pixel.Color(120, 120, 0));
-  pixel.setPixelColor(1, pixel.Color(0, 120, 120));
+  pixel.setPixelColor(0, pixel.Color(120, 0, 0));
+  pixel.setPixelColor(1, pixel.Color(120, 0, 0));
   pixel.show();
+
+  delay(250);
+
+  pixel.setPixelColor(0, pixel.Color(0, 120, 0));
+  pixel.setPixelColor(1, pixel.Color(0, 120, 0));
+  pixel.show();
+
+  delay(250);
 
   XBee.begin(9600);
 

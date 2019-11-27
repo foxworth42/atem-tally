@@ -122,9 +122,9 @@ void setup() {
 
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("1 2 3 4 5 6 7 8 9");
+  lcd.print("0|1 2 3 4 5 6 7 8 9");
   lcd.setCursor(0,2);
-  lcd.print("10 11 12 R");
+  lcd.print("1|0 1 2 R");
 }
 
 void loop() {
@@ -156,26 +156,28 @@ void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, 
   if(camera > 9) {
     switch(camera) {
       case 10:
-        lcd.setCursor(0,3);
+        lcd.setCursor(2,3);
         break;
       case 11:
-        lcd.setCursor(3,3);
+        lcd.setCursor(4,3);
         break;
       case 12:
         lcd.setCursor(6,3);
         break;
     }
   } else {
-    lcd.setCursor(camera + camera,1);
+    lcd.setCursor(camera + camera + 2,1);
   }
   
   switch(tally) {
     case 1:
+      // Live
       tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(opBrightness,0,0));
       tallyUnit[camera].fill(tallyUnit[camera].Color(talentBrightness,0,0), 1);
       lcd.print("L");
       break;
     case 2:
+      // Preview
       tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(0,opBrightness,0));
       if(showPreviewToTalent == true) {
         tallyUnit[camera].fill(tallyUnit[camera].Color(0,talentBrightness,0), 1);
@@ -186,8 +188,9 @@ void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, 
       }
       break;
     case 3:
-      tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(0,0,opBrightness));
-      tallyUnit[camera].fill(tallyUnit[camera].Color(0,0,talentBrightness), 1);
+      // Both
+      tallyUnit[camera].setPixelColor(0, tallyUnit[camera].Color(opBrightness,0,0));
+      tallyUnit[camera].fill(tallyUnit[camera].Color(talentBrightness,0,0), 1);
       lcd.print("B");
       break;
     default:
@@ -205,14 +208,16 @@ void setRemoteTally(int tally, bool showPreviewToTalent) {
   if(millis() > time_now + 100) {
     time_now = millis();
     
-    lcd.setCursor(9,3);
+    lcd.setCursor(8,3);
     
     switch(tally) {
       case 1:
+        // Live
         lcd.print("L");
         XBee.write('L');
         break;
       case 2:
+        // Preview
         if(showPreviewToTalent == true) {
           lcd.print("P");
           XBee.write('T');
@@ -222,8 +227,9 @@ void setRemoteTally(int tally, bool showPreviewToTalent) {
         }
         break;
       case 3:
+        // Both
         lcd.print("B");
-        XBee.write('B');
+        XBee.write('L');
         break;
       default:
         lcd.print(" ");
