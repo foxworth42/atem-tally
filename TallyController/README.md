@@ -1,4 +1,4 @@
-Arduino based tally controller using the Uno or Mega (Mega required for running 10 cameras).
+Arduino based tally controller using the Arduino Mega w/ Ethernet.
 
 Includes:
 - Ethernet
