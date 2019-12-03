@@ -48,21 +48,19 @@ void setup() {
   Serial.println(switcherIp);
 }
 
-int haveSentKillMessage = 0;
+unsigned long time_now = 0;
 void loop() {
   AtemSwitcher.runLoop();
   bool killSwitch = digitalRead(KILLSWITCH_PIN);
 
   if(killSwitch == true) {
-    // Send up to 5 kill messages before chilling out.
-    if(haveSentKillMessage < 5) {
+    if(millis() > time_now + 250) {
+      time_now = millis();
       Serial.println("Dumping.");
       AtemSwitcher.setProgramInputVideoSource(ME_TO_KILL, DUMP_TO);
       AtemSwitcher.setPreviewInputVideoSource(ME_TO_KILL, DUMP_TO);
-      haveSentKillMessage++;
     }
   } else {
-    haveSentKillMessage = 0;
+    time_now = 0;
   }
 }
-
