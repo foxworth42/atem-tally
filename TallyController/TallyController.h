@@ -1,3 +1,6 @@
+#ifndef TALLYCONTROLLER
+#define TALLYCONTROLLER
+
 #include <Arduino.h>
 
 #include <Adafruit_NeoPixel.h>
@@ -41,3 +44,6 @@ int numberOfTallyLights = 8;    // Sane default value (number for ATEM Televisio
 #define XBEE_In             11
 #define XBEE_Out            12
 #define STATUS_NEOPIXEL            13
+
+#endif
+

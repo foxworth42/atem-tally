@@ -127,13 +127,17 @@ void setup() {
   lcd.print("1|0 1 2 R");
 }
 
+bool haveDefinedMaxCameras = false;
 void loop() {
   AtemSwitcher.runLoop();
 
-  // Automatically set the number of tally lights up to 12.
-  numberOfTallyLights = AtemSwitcher.getTallyByIndexSources();
-  if(numberOfTallyLights > MAX_TALLY_LIGHTS) {
-    numberOfTallyLights = MAX_TALLY_LIGHTS;
+  if(haveDefinedMaxCameras == false) {
+    // Automatically set the number of tally lights up to 12.
+    numberOfTallyLights = AtemSwitcher.getTallyByIndexSources();
+    if(numberOfTallyLights > MAX_TALLY_LIGHTS) {
+      numberOfTallyLights = MAX_TALLY_LIGHTS;
+    }
+    haveDefinedMaxCameras = true;
   }
 
   bool showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
@@ -247,3 +251,4 @@ void setAll(uint32_t color) {
   statusLed.fill(color);
   statusLed.show();
 }
+
