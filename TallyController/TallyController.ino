@@ -21,6 +21,7 @@ LiquidCrystal_I2C lcd(0x27,20,4);
 SoftwareSerial XBee(XBEE_In, XBEE_Out);  // TX, RX
 ATEMmin AtemSwitcher;
 
+void(* reboot) (void) = 0;
 
 void setup() {
   pinMode(4,OUTPUT);
@@ -37,6 +38,11 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+
+  doInit();
+}
+
+void doInit() {
   
   lcd.init();
   lcd.backlight();
@@ -57,10 +63,16 @@ void setup() {
   XBee.write("L");
   setAll(tallyUnit[0].Color(128,0,0));
 
+  IPAddress ip(EEPROM.read(0), EEPROM.read(1), EEPROM.read(2), EEPROM.read(3));
+  IPAddress netmask(EEPROM.read(4), EEPROM.read(5), EEPROM.read(6), EEPROM.read(7));
+  IPAddress switcherIp(EEPROM.read(8), EEPROM.read(9), EEPROM.read(10), EEPROM.read(11));
+  
   Serial.println("Initialize Ethernet:");
   lcd.print("Init Ethernet");
   Ethernet.init(10);  // Most Arduino shields
   Ethernet.begin(mac, ip);
+  Ethernet.setSubnetMask(netmask);
+
 
   if (Ethernet.hardwareStatus() == EthernetNoHardware) {
     lcd.setCursor(0,0);
@@ -129,6 +141,8 @@ void setup() {
 
 bool haveDefinedMaxCameras = false;
 void loop() {
+  handleSerialConfig();
+  
   AtemSwitcher.runLoop();
 
   if(haveDefinedMaxCameras == false) {
@@ -252,3 +266,83 @@ void setAll(uint32_t color) {
   statusLed.show();
 }
 
+void handleSerialConfig() {
+  static byte ndx = 0;
+  char endMarker = '\n';
+  char rc;
+  while (Serial.available() > 0) {
+    rc = Serial.read();
+    
+    if (rc != endMarker) {
+      receivedChars[ndx] = rc;
+      ndx++;
+      if (ndx >= numChars) {
+        ndx = numChars - 1;
+      }
+    }
+    else {
+      receivedChars[ndx] = '\0'; // terminate the string
+      ndx = 0;
+      parseNewConfig();
+    }
+  }
+}
+
+void parseNewConfig() {
+  boolean nextCharIsNum = false;
+  int configIp[4] = { 0, 0, 0, 0 };
+  int nextOctet = 0;
+  for( unsigned int a = 0; a < sizeof(receivedChars); a = a + 1 )
+  {
+    if(a==0) {
+      nextCharIsNum = true;
+      continue;
+    }
+    if(receivedChars[a] == '.') {
+      nextCharIsNum = true;
+      continue;
+    }
+    if(nextCharIsNum == true) {
+      int octet = atoi(&receivedChars[a]);
+      configIp[nextOctet] = octet;
+      nextOctet = nextOctet + 1;
+      nextCharIsNum = false;
+    }
+  }
+
+  char output[40];
+  switch(receivedChars[0]) {
+    case 'I':
+      sprintf(output, "New IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+      Serial.println(output);
+      EEPROM.update(0, configIp[0]);
+      EEPROM.update(1, configIp[1]);
+      EEPROM.update(2, configIp[2]);
+      EEPROM.update(3, configIp[3]);
+      break;
+    case 'N':
+      sprintf(output, "New Netmask: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+      Serial.println(output);
+      EEPROM.update(4, configIp[0]);
+      EEPROM.update(5, configIp[1]);
+      EEPROM.update(6, configIp[2]);
+      EEPROM.update(7, configIp[3]);
+      break;
+    case 'A':
+      sprintf(output, "New ATEM Switcher IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+      Serial.println(output);
+      lcd.
+      EEPROM.update(8, configIp[0]);
+      EEPROM.update(9, configIp[1]);
+      EEPROM.update(10, configIp[2]);
+      EEPROM.update(11, configIp[3]);
+      break;
+    default:
+      Serial.println("Unknown config parameter");
+  }
+
+  Serial.println("Resetting");
+  delay(1000);
+//  doInit();
+  reboot();
+}
