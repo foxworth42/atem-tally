@@ -81,7 +81,10 @@
 <layer number="114" name="Badge_Outline" color="11" fill="1" visible="no" active="no"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
@@ -91,8 +94,10 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="bottom_silk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
@@ -1676,6 +1681,47 @@ at 30/07/2012 17:45:58</description>
 </package>
 </packages>
 </library>
+<library name="Nordic_nRF" urn="urn:adsk.eagle:library:169009">
+<description>&lt;h4&gt;Nordic Semiconductor Devices&lt;/h4&gt;
+&lt;br&gt;
+&lt;a href=http://www.nordicsemi.com&gt;www.nordicsemi.com&lt;/a&gt;
+&lt;br&gt;
+To report issues with this library go to &lt;a href=https://github.com/NordicPlayground/nrf5-eagle-reference-design/blob/master/Library/Nordic_nRF.lbr&gt;github&lt;/a&gt;</description>
+<packages>
+<package name="RESC0805_N" urn="urn:adsk.eagle:footprint:2593715/1" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-1.1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<text x="-1" y="1.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<wire x1="-1" y1="0.6" x2="1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="0.6" x2="1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.6" x2="-1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.6" x2="-1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.85" y1="-0.95" x2="1.85" y2="0.95" width="0.1" layer="39"/>
+<wire x1="1.85" y1="0.95" x2="-1.95" y2="0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="0.95" x2="-1.95" y2="-0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="-0.95" x2="1.85" y2="-0.95" width="0.1" layer="39"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="RESC0805_N" urn="urn:adsk.eagle:package:2593736/1" type="box" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0805_N"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1872,15 +1918,15 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PROD_ID" value="CAP-09538" x="48.768" y="56.769" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="-0.635" y="26.289" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center"/>
 </element>
-<element name="D2" library="SamacSys_Parts" package="DIOM2013X100N" value="ACDBS140-HF" x="40.64" y="3.81" smashed="yes">
-<attribute name="DESCRIPTION" value="Schottky Diodes &amp; Rectifiers 40V 1A 0805" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="1mm" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Comchip Technology" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="ACDBS140-HF" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="750-ACDBS140-HF" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=750-ACDBS140-HF" x="69.85" y="-50.8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="40.64" y="6.35" size="1.27" layer="25" align="top-center"/>
-<attribute name="VALUE" x="40.64" y="6.35" size="1.27" layer="27" align="center" display="off"/>
+<element name="D2" library="SamacSys_Parts" package="DIOM2013X100N" value="ACDBS140-HF" x="50.8" y="15.24" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="Schottky Diodes &amp; Rectifiers 40V 1A 0805" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="1mm" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Comchip Technology" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ACDBS140-HF" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="750-ACDBS140-HF" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=750-ACDBS140-HF" x="-3.81" y="-13.97" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="53.34" y="15.24" size="1.27" layer="25" rot="R270" align="top-center"/>
+<attribute name="VALUE" x="53.34" y="15.24" size="1.27" layer="27" rot="R270" align="center" display="off"/>
 </element>
 <element name="FRONT-PIXEL" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="22-23-2031" package3d_urn="urn:adsk.eagle:package:8078634/1" value="22-23-2031" x="54.61" y="50.8" smashed="yes" rot="R270">
 <attribute name="MF" value="MOLEX" x="12.7" y="-3.81" size="1.778" layer="27" rot="R270" display="off"/>
@@ -1925,15 +1971,31 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="SUPPLIER" value="Texas Instruments" x="10.414" y="33.528" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="14.859" y="30.3276" size="2.0828" layer="27" ratio="10" rot="SR90" display="off"/>
 </element>
-<element name="IC1" library="SamacSys_Parts" package="NCP5501DT50RKG" value="NCP5501DT50RKG" x="52.832" y="22.606" smashed="yes" rot="R270">
-<attribute name="DESCRIPTION" value="ON SEMICONDUCTOR - NCP5501DT50RKG - LDO, FIXED, 5V, 0.5A, TO-252-3" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="3mm" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="ON Semiconductor" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="NCP5501DT50RKG" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="863-NCP5501DT50RKG" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=863-NCP5501DT50RKG" x="52.832" y="22.606" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="58.166" y="22.492" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="VALUE" x="58.166" y="22.492" size="1.27" layer="27" rot="R90" align="center" display="off"/>
+<element name="IC1" library="SamacSys_Parts" package="NCP5501DT50RKG" value="NCP5501DT50RKG" x="52.832" y="23.876" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="ON SEMICONDUCTOR - NCP5501DT50RKG - LDO, FIXED, 5V, 0.5A, TO-252-3" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="3mm" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="ON Semiconductor" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="NCP5501DT50RKG" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="863-NCP5501DT50RKG" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=863-NCP5501DT50RKG" x="52.832" y="23.876" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="58.166" y="23.762" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="58.166" y="23.762" size="1.27" layer="27" rot="R90" align="center" display="off"/>
+</element>
+<element name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="" x="38.735" y="3.81" smashed="yes" rot="MR90">
+<attribute name="NAME" x="40.235" y="2.81" size="1.27" layer="26" rot="MR90"/>
+<attribute name="VALUE" x="36.235" y="2.81" size="1.27" layer="28" rot="MR90"/>
+</element>
+<element name="C3" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="" x="20.32" y="30.48" smashed="yes" rot="MR0">
+<attribute name="NAME" x="21.32" y="31.98" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="21.32" y="27.98" size="1.27" layer="28" rot="MR0"/>
+</element>
+<element name="C4" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="" x="10.16" y="49.53" smashed="yes" rot="MR180">
+<attribute name="NAME" x="9.16" y="48.03" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="9.16" y="52.03" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="C5" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="" x="50.8" y="50.8" smashed="yes" rot="MR0">
+<attribute name="NAME" x="51.8" y="52.3" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="51.8" y="48.3" size="1.27" layer="28" rot="MR0"/>
 </element>
 </elements>
 <signals>
@@ -1963,19 +2025,20 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="U1" pad="3"/>
 <contactref element="U1" pad="1"/>
 <contactref element="IC1" pad="2"/>
+<contactref element="C2" pad="2"/>
+<contactref element="C5" pad="2"/>
+<contactref element="C4" pad="2"/>
+<contactref element="C3" pad="2"/>
+<via x="11.684" y="47.752" extent="1-16" drill="0.35"/>
+<wire x1="11.16" y1="49.53" x2="11.684" y2="49.006" width="0.508" layer="16"/>
+<wire x1="11.684" y1="49.006" x2="11.684" y2="47.752" width="0.508" layer="16"/>
 </signal>
 <signal name="VIN">
-<contactref element="B1" pad="24"/>
 <contactref element="D2" pad="1"/>
-<wire x1="33.02" y1="3.81" x2="34.29" y2="2.54" width="0.508" layer="1"/>
-<wire x1="34.29" y1="2.54" x2="36.83" y2="2.54" width="0.508" layer="1"/>
-<wire x1="36.83" y1="2.54" x2="38.1" y2="3.81" width="0.508" layer="1"/>
-<wire x1="38.1" y1="3.81" x2="39.69" y2="3.81" width="0.508" layer="1"/>
 <contactref element="IC1" pad="1"/>
-<wire x1="39.69" y1="3.81" x2="39.69" y2="15.814" width="0.508" layer="1"/>
-<wire x1="50.479" y1="18.288" x2="50.547" y2="18.356" width="0.508" layer="1"/>
-<wire x1="39.69" y1="15.814" x2="42.164" y2="18.288" width="0.508" layer="1"/>
-<wire x1="42.164" y1="18.288" x2="50.479" y2="18.288" width="0.508" layer="1"/>
+<wire x1="50.479" y1="19.558" x2="50.547" y2="19.626" width="0.508" layer="1"/>
+<wire x1="50.8" y1="16.19" x2="50.479" y2="16.511" width="1.016" layer="1"/>
+<wire x1="50.479" y1="16.511" x2="50.479" y2="19.558" width="1.016" layer="1"/>
 </signal>
 <signal name="NEOPIXEL">
 <contactref element="R1" pad="1"/>
@@ -2004,11 +2067,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="PWR">
 <contactref element="D2" pad="2"/>
 <contactref element="J2" pad="PWR"/>
-<wire x1="50.8" y1="11.16" x2="46.72" y2="11.16" width="1.016" layer="1"/>
-<wire x1="44.45" y1="5.08" x2="43.18" y2="3.81" width="1.016" layer="1"/>
-<wire x1="43.18" y1="3.81" x2="41.59" y2="3.81" width="1.016" layer="1"/>
-<wire x1="46.72" y1="11.16" x2="44.45" y2="8.89" width="1.016" layer="1"/>
-<wire x1="44.45" y1="8.89" x2="44.45" y2="5.08" width="1.016" layer="1"/>
+<wire x1="50.8" y1="11.16" x2="50.8" y2="14.29" width="1.016" layer="1"/>
 </signal>
 <signal name="3.3V">
 <contactref element="JP4" pad="1"/>
@@ -2018,11 +2077,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="26.67" y1="7.62" x2="24.13" y2="10.16" width="0.508" layer="16"/>
 <wire x1="2.54" y1="16.51" x2="8.89" y2="10.16" width="0.508" layer="16"/>
 <wire x1="24.13" y1="10.16" x2="8.89" y2="10.16" width="0.508" layer="16"/>
-<wire x1="21.91" y1="33.45" x2="21.91" y2="26.99" width="0.508" layer="16"/>
-<wire x1="21.91" y1="26.99" x2="16.51" y2="21.59" width="0.508" layer="16"/>
 <wire x1="3.81" y1="21.59" x2="2.54" y2="20.32" width="0.508" layer="16"/>
 <wire x1="2.54" y1="20.32" x2="2.54" y2="16.51" width="0.508" layer="16"/>
 <wire x1="16.51" y1="21.59" x2="3.81" y2="21.59" width="0.508" layer="16"/>
+<contactref element="C3" pad="1"/>
+<wire x1="21.42" y1="30.48" x2="21.91" y2="30.97" width="0.508" layer="16"/>
+<wire x1="21.91" y1="30.97" x2="21.91" y2="33.45" width="0.508" layer="16"/>
+<wire x1="21.42" y1="30.48" x2="21.42" y2="26.5" width="0.508" layer="16"/>
+<wire x1="21.42" y1="26.5" x2="16.51" y2="21.59" width="0.508" layer="16"/>
 </signal>
 <signal name="DIN">
 <contactref element="B1" pad="5"/>
@@ -2043,21 +2105,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="FRONT-PIXEL" pad="2"/>
 <contactref element="C1" pad="+"/>
 <contactref element="OP-PIXEL" pad="2"/>
-<wire x1="8.89" y1="49.53" x2="6.35" y2="49.53" width="0.508" layer="16"/>
-<wire x1="54.61" y1="50.8" x2="53.34" y2="50.8" width="0.508" layer="16"/>
-<wire x1="53.34" y1="50.8" x2="50.8" y2="53.34" width="0.508" layer="16"/>
-<wire x1="50.8" y1="53.34" x2="12.7" y2="53.34" width="0.508" layer="16"/>
-<wire x1="12.7" y1="53.34" x2="8.89" y2="49.53" width="0.508" layer="16"/>
+<wire x1="12.7" y1="53.34" x2="50.8" y2="53.34" width="0.508" layer="16"/>
 <contactref element="U1" pad="5"/>
 <contactref element="IC1" pad="3"/>
-<wire x1="55.117" y1="18.356" x2="56.71" y2="18.356" width="0.508" layer="1"/>
-<wire x1="56.71" y1="18.356" x2="57.912" y2="19.558" width="0.508" layer="1"/>
-<wire x1="57.912" y1="19.558" x2="57.912" y2="30.226" width="0.508" layer="1"/>
 <wire x1="57.912" y1="30.226" x2="56.388" y2="31.75" width="0.508" layer="1"/>
 <wire x1="49.53" y1="31.75" x2="56.388" y2="31.75" width="0.508" layer="1"/>
 <wire x1="10.668" y1="32.599" x2="6.858" y2="28.789" width="0.508" layer="16"/>
-<wire x1="8.89" y1="49.53" x2="10.668" y2="47.752" width="0.508" layer="16"/>
-<wire x1="10.668" y1="47.752" x2="10.668" y2="32.599" width="0.508" layer="16"/>
 <wire x1="6.858" y1="28.789" x2="6.858" y2="31.75" width="0.3048" layer="1"/>
 <wire x1="9.4742" y1="34.3662" x2="9.4742" y2="34.8234" width="0.3048" layer="1"/>
 <wire x1="6.858" y1="31.75" x2="9.4742" y2="34.3662" width="0.3048" layer="1"/>
@@ -2066,6 +2119,35 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="45.72" y1="35.56" x2="49.53" y2="31.75" width="0.508" layer="1"/>
 <wire x1="13.629" y1="35.56" x2="10.668" y2="32.599" width="0.508" layer="16"/>
 <wire x1="29.21" y1="35.56" x2="13.629" y2="35.56" width="0.508" layer="16"/>
+<contactref element="C4" pad="1"/>
+<contactref element="C5" pad="1"/>
+<wire x1="54.61" y1="50.8" x2="51.9" y2="50.8" width="0.508" layer="16"/>
+<wire x1="50.8" y1="53.34" x2="51.9" y2="52.24" width="0.508" layer="16"/>
+<wire x1="51.9" y1="52.24" x2="51.9" y2="50.8" width="0.508" layer="16"/>
+<wire x1="10.668" y1="47.922" x2="9.06" y2="49.53" width="0.508" layer="16"/>
+<wire x1="10.668" y1="32.599" x2="10.668" y2="47.922" width="0.508" layer="16"/>
+<wire x1="9.06" y1="49.53" x2="6.35" y2="49.53" width="0.508" layer="16"/>
+<wire x1="9.06" y1="49.53" x2="9.06" y2="49.7" width="0.508" layer="16"/>
+<wire x1="9.06" y1="49.7" x2="12.7" y2="53.34" width="0.508" layer="16"/>
+<contactref element="C2" pad="1"/>
+<contactref element="B1" pad="24"/>
+<wire x1="55.811" y1="20.32" x2="55.117" y2="19.626" width="0.508" layer="1"/>
+<wire x1="55.811" y1="20.32" x2="57.15" y2="20.32" width="0.508" layer="1"/>
+<wire x1="57.15" y1="20.32" x2="57.912" y2="21.082" width="0.508" layer="1"/>
+<wire x1="57.912" y1="21.082" x2="57.912" y2="30.226" width="0.508" layer="1"/>
+<via x="55.88" y="16.51" extent="1-16" drill="0.35"/>
+<wire x1="55.117" y1="19.626" x2="55.88" y2="18.863" width="0.508" layer="1"/>
+<wire x1="55.88" y1="18.863" x2="55.88" y2="16.51" width="0.508" layer="1"/>
+<wire x1="33.02" y1="3.81" x2="34.29" y2="2.54" width="0.508" layer="16"/>
+<wire x1="34.29" y1="2.54" x2="38.565" y2="2.54" width="0.508" layer="16"/>
+<wire x1="38.735" y1="2.71" x2="38.565" y2="2.54" width="0.508" layer="16"/>
+<wire x1="55.88" y1="16.51" x2="49.53" y2="16.51" width="0.508" layer="16"/>
+<wire x1="49.53" y1="16.51" x2="48.26" y2="15.24" width="0.508" layer="16"/>
+<wire x1="48.26" y1="15.24" x2="48.26" y2="13.97" width="0.508" layer="16"/>
+<wire x1="48.26" y1="13.97" x2="44.45" y2="10.16" width="0.508" layer="16"/>
+<wire x1="44.45" y1="10.16" x2="44.45" y2="5.08" width="0.508" layer="16"/>
+<wire x1="44.45" y1="5.08" x2="42.08" y2="2.71" width="0.508" layer="16"/>
+<wire x1="42.08" y1="2.71" x2="38.735" y2="2.71" width="0.508" layer="16"/>
 </signal>
 <signal name="N$1">
 <polygon width="0.508" layer="16" pour="cutout" isolate="0.3048">

@@ -81,7 +81,10 @@
 <layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
@@ -91,8 +94,10 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="bottom_silk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
@@ -5970,6 +5975,534 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Nordic_nRF" urn="urn:adsk.eagle:library:169009">
+<description>&lt;h4&gt;Nordic Semiconductor Devices&lt;/h4&gt;
+&lt;br&gt;
+&lt;a href=http://www.nordicsemi.com&gt;www.nordicsemi.com&lt;/a&gt;
+&lt;br&gt;
+To report issues with this library go to &lt;a href=https://github.com/NordicPlayground/nrf5-eagle-reference-design/blob/master/Library/Nordic_nRF.lbr&gt;github&lt;/a&gt;</description>
+<packages>
+<package name="RESC0201_L" urn="urn:adsk.eagle:footprint:2593703/1" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC High Density</description>
+<smd name="1" x="-0.255" y="0" dx="0.28" dy="0.43" layer="1"/>
+<smd name="2" x="0.255" y="0" dx="0.28" dy="0.43" layer="1"/>
+<text x="-2" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.3" y1="0.15" x2="-0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="-0.3" y1="-0.15" x2="0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="-0.15" x2="0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="0.15" x2="-0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="-0.3" x2="0.5" y2="-0.3" width="0.1" layer="39"/>
+<wire x1="0.5" y1="-0.3" x2="0.5" y2="0.3" width="0.1" layer="39"/>
+<wire x1="0.5" y1="0.3" x2="-0.5" y2="0.3" width="0.1" layer="39"/>
+<wire x1="-0.5" y1="0.3" x2="-0.5" y2="-0.3" width="0.1" layer="39"/>
+</package>
+<package name="RESC0201_M" urn="urn:adsk.eagle:footprint:2593710/1" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<smd name="1" x="-0.355" y="0" dx="0.5" dy="0.55" layer="1"/>
+<smd name="2" x="0.355" y="0" dx="0.5" dy="0.55" layer="1"/>
+<text x="-0.4" y="1.1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.3" y1="0.15" x2="-0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="-0.3" y1="-0.15" x2="0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="-0.15" x2="0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="0.15" x2="-0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="0.8" y1="-0.5" x2="0.8" y2="0.5" width="0.1" layer="39"/>
+<wire x1="0.8" y1="0.5" x2="-0.8" y2="0.5" width="0.1" layer="39"/>
+<wire x1="-0.8" y1="0.5" x2="-0.8" y2="-0.5" width="0.1" layer="39"/>
+<wire x1="-0.8" y1="-0.5" x2="0.8" y2="-0.5" width="0.1" layer="39"/>
+</package>
+<package name="RESC0201_N" urn="urn:adsk.eagle:footprint:2593709/1" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-0.305" y="0" dx="0.4" dy="0.45" layer="1"/>
+<smd name="2" x="0.305" y="0" dx="0.4" dy="0.45" layer="1"/>
+<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.3" y1="0.15" x2="-0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="-0.3" y1="-0.15" x2="0.3" y2="-0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="-0.15" x2="0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="0.3" y1="0.15" x2="-0.3" y2="0.15" width="0.1" layer="51"/>
+<wire x1="0.65" y1="-0.35" x2="0.65" y2="0.35" width="0.1" layer="39"/>
+<wire x1="0.65" y1="0.35" x2="-0.65" y2="0.35" width="0.1" layer="39"/>
+<wire x1="-0.65" y1="0.35" x2="-0.65" y2="-0.35" width="0.1" layer="39"/>
+<wire x1="-0.65" y1="-0.35" x2="0.65" y2="-0.35" width="0.1" layer="39"/>
+</package>
+<package name="RESC0402_L" urn="urn:adsk.eagle:footprint:2593700/1" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC High Density</description>
+<smd name="1" x="-0.5" y="0" dx="0.5" dy="0.6" layer="1"/>
+<smd name="2" x="0.5" y="0" dx="0.5" dy="0.6" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.5" y1="0.25" x2="0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="0.25" x2="0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="-0.25" x2="-0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="-0.25" x2="-0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="0.85" y1="-0.4" x2="0.85" y2="0.4" width="0.1" layer="39"/>
+<wire x1="0.85" y1="0.4" x2="-0.85" y2="0.4" width="0.1" layer="39"/>
+<wire x1="-0.85" y1="0.4" x2="-0.85" y2="-0.4" width="0.1" layer="39"/>
+<wire x1="-0.85" y1="-0.4" x2="0.85" y2="-0.4" width="0.1" layer="39"/>
+</package>
+<package name="RESC0402_M" urn="urn:adsk.eagle:footprint:2593712/1" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<smd name="1" x="-0.6" y="0" dx="0.7" dy="0.7" layer="1"/>
+<smd name="2" x="0.6" y="0" dx="0.7" dy="0.7" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.5" y1="0.25" x2="0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="0.25" x2="0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="-0.25" x2="-0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="-0.25" x2="-0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="1.15" y1="-0.55" x2="1.15" y2="0.55" width="0.1" layer="39"/>
+<wire x1="1.15" y1="0.55" x2="-1.15" y2="0.55" width="0.1" layer="39"/>
+<wire x1="-1.15" y1="0.55" x2="-1.15" y2="-0.55" width="0.1" layer="39"/>
+<wire x1="-1.15" y1="-0.55" x2="1.15" y2="-0.55" width="0.1" layer="39"/>
+</package>
+<package name="RESC0402_N" urn="urn:adsk.eagle:footprint:2593711/1" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-0.55" y="0" dx="0.6" dy="0.6" layer="1"/>
+<smd name="2" x="0.55" y="0" dx="0.6" dy="0.6" layer="1"/>
+<text x="-0.6" y="1.1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.7" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.5" y1="0.25" x2="0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="0.25" x2="0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="-0.25" x2="-0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="-0.25" x2="-0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="1" y1="-0.45" x2="1" y2="0.45" width="0.1" layer="39"/>
+<wire x1="1" y1="0.45" x2="-1" y2="0.45" width="0.1" layer="39"/>
+<wire x1="-1" y1="0.45" x2="-1" y2="-0.45" width="0.1" layer="39"/>
+<wire x1="-1" y1="-0.45" x2="1" y2="-0.45" width="0.1" layer="39"/>
+</package>
+<package name="RESC0603_L" urn="urn:adsk.eagle:footprint:2593701/1" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC High Density</description>
+<smd name="1" x="-0.7" y="0" dx="0.85" dy="0.8" layer="1"/>
+<smd name="2" x="0.7" y="0" dx="0.85" dy="0.8" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.8" y1="0.4" x2="0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="0.4" x2="0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-0.4" x2="-0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="-0.4" x2="-0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="1.25" y1="-0.5" x2="1.25" y2="0.5" width="0.1" layer="39"/>
+<wire x1="1.25" y1="0.5" x2="-1.25" y2="0.5" width="0.1" layer="39"/>
+<wire x1="-1.25" y1="0.5" x2="-1.25" y2="-0.5" width="0.1" layer="39"/>
+<wire x1="-1.25" y1="-0.5" x2="1.25" y2="-0.5" width="0.1" layer="39"/>
+</package>
+<package name="RESC0603_M" urn="urn:adsk.eagle:footprint:2593714/1" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC High Density</description>
+<smd name="1" x="-0.9" y="0" dx="1.25" dy="1" layer="1"/>
+<smd name="2" x="0.9" y="0" dx="1.25" dy="1" layer="1"/>
+<text x="-1" y="2" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-3" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.8" y1="0.4" x2="0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="0.4" x2="0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-0.4" x2="-0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="-0.4" x2="-0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="2" y1="-1" x2="2" y2="1" width="0.1" layer="39"/>
+<wire x1="2" y1="1" x2="-2" y2="1" width="0.1" layer="39"/>
+<wire x1="-2" y1="1" x2="-2" y2="-1" width="0.1" layer="39"/>
+<wire x1="-2" y1="-1" x2="2" y2="-1" width="0.1" layer="39"/>
+</package>
+<package name="RESC0603_N" urn="urn:adsk.eagle:footprint:2593713/1" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-0.8" y="0" dx="1.05" dy="0.9" layer="1"/>
+<smd name="2" x="0.8" y="0" dx="1.05" dy="0.9" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.8" y1="0.4" x2="0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="0.4" x2="0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-0.4" x2="-0.8" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="-0.4" x2="-0.8" y2="0.4" width="0.127" layer="51"/>
+<wire x1="1.6" y1="-0.7" x2="1.6" y2="0.7" width="0.1" layer="39"/>
+<wire x1="1.6" y1="0.7" x2="-1.6" y2="0.7" width="0.1" layer="39"/>
+<wire x1="-1.6" y1="0.7" x2="-1.6" y2="-0.7" width="0.1" layer="39"/>
+<wire x1="-1.6" y1="-0.7" x2="1.6" y2="-0.7" width="0.1" layer="39"/>
+</package>
+<package name="RESC0805_L" urn="urn:adsk.eagle:footprint:2593702/1" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC High Density</description>
+<smd name="1" x="-1" y="0" dx="1" dy="1.25" layer="1"/>
+<smd name="2" x="1" y="0" dx="1" dy="1.25" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<wire x1="-1" y1="0.6" x2="1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="0.6" x2="1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.6" x2="-1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.6" x2="-1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.6" y1="-0.75" x2="1.6" y2="0.75" width="0.1" layer="39"/>
+<wire x1="1.6" y1="0.75" x2="-1.6" y2="0.75" width="0.1" layer="39"/>
+<wire x1="-1.6" y1="0.75" x2="-1.6" y2="-0.75" width="0.1" layer="39"/>
+<wire x1="-1.6" y1="-0.75" x2="1.6" y2="-0.75" width="0.1" layer="39"/>
+</package>
+<package name="RESC0805_M" urn="urn:adsk.eagle:footprint:2593716/1" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<smd name="1" x="-1.2" y="0" dx="1.4" dy="1.45" layer="1"/>
+<smd name="2" x="1.2" y="0" dx="1.4" dy="1.45" layer="1"/>
+<text x="-2" y="2" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2" y="-3" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<wire x1="-1" y1="0.6" x2="1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="0.6" x2="1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.6" x2="-1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.6" x2="-1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="2.4" y1="-1.2" x2="2.4" y2="1.2" width="0.1" layer="39"/>
+<wire x1="2.4" y1="1.2" x2="-2.4" y2="1.2" width="0.1" layer="39"/>
+<wire x1="-2.4" y1="1.2" x2="-2.4" y2="-1.2" width="0.1" layer="39"/>
+<wire x1="-2.4" y1="-1.2" x2="2.4" y2="-1.2" width="0.1" layer="39"/>
+</package>
+<package name="RESC0805_N" urn="urn:adsk.eagle:footprint:2593715/1" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-1.1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<text x="-1" y="1.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<wire x1="-1" y1="0.6" x2="1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="0.6" x2="1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.6" x2="-1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.6" x2="-1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.85" y1="-0.95" x2="1.85" y2="0.95" width="0.1" layer="39"/>
+<wire x1="1.85" y1="0.95" x2="-1.95" y2="0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="0.95" x2="-1.95" y2="-0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="-0.95" x2="1.85" y2="-0.95" width="0.1" layer="39"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="RESC0201_L" urn="urn:adsk.eagle:package:2593725/1" type="box" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC High Density</description>
+<packageinstances>
+<packageinstance name="RESC0201_L"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0201_M" urn="urn:adsk.eagle:package:2593731/1" type="box" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<packageinstances>
+<packageinstance name="RESC0201_M"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0201_N" urn="urn:adsk.eagle:package:2593730/1" type="box" library_version="8">
+<description>&lt;b&gt;0201&lt;/b&gt; chip&lt;p&gt;
+0201 (imperial)&lt;br/&gt;
+0603 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0201_N"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0402_L" urn="urn:adsk.eagle:package:2593728/1" type="box" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC High Density</description>
+<packageinstances>
+<packageinstance name="RESC0402_L"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0402_M" urn="urn:adsk.eagle:package:2593733/1" type="box" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<packageinstances>
+<packageinstance name="RESC0402_M"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0402_N" urn="urn:adsk.eagle:package:2593732/1" type="box" library_version="8">
+<description>&lt;b&gt;0402&lt;/b&gt; chip &lt;p&gt;
+
+0402 (imperial)&lt;br/&gt;
+1005 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0402_N"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0603_L" urn="urn:adsk.eagle:package:2593727/1" type="box" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC High Density</description>
+<packageinstances>
+<packageinstance name="RESC0603_L"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0603_M" urn="urn:adsk.eagle:package:2593735/1" type="box" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC High Density</description>
+<packageinstances>
+<packageinstance name="RESC0603_M"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0603_N" urn="urn:adsk.eagle:package:2593734/1" type="box" library_version="8">
+<description>&lt;b&gt;0603&lt;/b&gt; chip &lt;p&gt;
+
+0603 (imperial)&lt;br/&gt;
+1608 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0603_N"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0805_L" urn="urn:adsk.eagle:package:2593726/1" type="box" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC High Density</description>
+<packageinstances>
+<packageinstance name="RESC0805_L"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0805_M" urn="urn:adsk.eagle:package:2593737/1" type="box" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Low Density</description>
+<packageinstances>
+<packageinstance name="RESC0805_M"/>
+</packageinstances>
+</package3d>
+<package3d name="RESC0805_N" urn="urn:adsk.eagle:package:2593736/1" type="box" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0805_N"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="C-EU" urn="urn:adsk.eagle:symbol:2593694/1" library_version="8">
+<wire x1="0" y1="0" x2="0" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-2.032" width="0.1524" layer="94"/>
+<text x="1.524" y="0.381" size="1.778" layer="95">&gt;NAME</text>
+<text x="1.524" y="-4.699" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.032" y1="-2.032" x2="2.032" y2="-1.524" layer="94"/>
+<rectangle x1="-2.032" y1="-1.016" x2="2.032" y2="-0.508" layer="94"/>
+<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CAPACITOR" urn="urn:adsk.eagle:component:2593743/1" uservalue="yes" library_version="8">
+<description>&lt;b&gt;Generic chip capacitor&lt;/b&gt;</description>
+<gates>
+<gate name="C$1" symbol="C-EU" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_0201_L" package="RESC0201_L">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593725/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0201_M" package="RESC0201_M">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593731/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0201_N" package="RESC0201_N">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593730/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0402_L" package="RESC0402_L">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593728/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0402_M" package="RESC0402_M">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593733/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0402_N" package="RESC0402_N">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593732/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_L" package="RESC0603_L">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593727/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_M" package="RESC0603_M">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593735/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0603_N" package="RESC0603_N">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593734/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_L" package="RESC0805_L">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593726/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_M" package="RESC0805_M">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593737/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_0805_N" package="RESC0805_N">
+<connects>
+<connect gate="C$1" pin="1" pad="1"/>
+<connect gate="C$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2593736/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5991,6 +6524,7 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2" value="NEOPIXEL-O"/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
 <part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
+<part name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" deviceset="CAPACITOR" device="_0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -6042,6 +6576,10 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <instance part="JP4" gate="G$1" x="165.1" y="116.84" smashed="yes">
 <attribute name="NAME" x="158.75" y="120.015" size="1.778" layer="95"/>
 <attribute name="VALUE" x="158.75" y="111.76" size="1.778" layer="96"/>
+</instance>
+<instance part="C2" gate="C$1" x="114.3" y="147.32" smashed="yes">
+<attribute name="NAME" x="115.824" y="147.701" size="1.778" layer="95"/>
+<attribute name="VALUE" x="115.824" y="142.621" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -6125,6 +6663,11 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <wire x1="162.56" y1="124.46" x2="149.86" y2="124.46" width="0.1524" layer="91"/>
 <label x="149.86" y="124.46" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="C2" gate="C$1" pin="2"/>
+<wire x1="114.3" y1="142.24" x2="114.3" y2="132.08" width="0.1524" layer="91"/>
+<label x="114.3" y="134.62" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -6164,6 +6707,11 @@ http://www.hammondmfg.com/pdf/1553C.pdf&lt;br&gt;</description>
 <pinref part="JP4" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="116.84" x2="149.86" y2="116.84" width="0.1524" layer="91"/>
 <label x="149.86" y="116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C2" gate="C$1" pin="1"/>
+<wire x1="114.3" y1="149.86" x2="114.3" y2="157.48" width="0.1524" layer="91"/>
+<label x="114.3" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="NEODATA" class="0">

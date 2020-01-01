@@ -81,7 +81,10 @@
 <layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
@@ -91,8 +94,10 @@
 <layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="129" name="Mask" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="130" name="SMDSTROOK" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="bottom_silk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
@@ -1507,6 +1512,47 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package3d>
 </packages3d>
 </library>
+<library name="Nordic_nRF" urn="urn:adsk.eagle:library:169009">
+<description>&lt;h4&gt;Nordic Semiconductor Devices&lt;/h4&gt;
+&lt;br&gt;
+&lt;a href=http://www.nordicsemi.com&gt;www.nordicsemi.com&lt;/a&gt;
+&lt;br&gt;
+To report issues with this library go to &lt;a href=https://github.com/NordicPlayground/nrf5-eagle-reference-design/blob/master/Library/Nordic_nRF.lbr&gt;github&lt;/a&gt;</description>
+<packages>
+<package name="RESC0805_N" urn="urn:adsk.eagle:footprint:2593715/1" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<smd name="1" x="-1.1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.2" dy="1.35" layer="1"/>
+<text x="-1" y="1.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<wire x1="-1" y1="0.6" x2="1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="0.6" x2="1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="1" y1="-0.6" x2="-1" y2="-0.6" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.6" x2="-1" y2="0.6" width="0.127" layer="51"/>
+<wire x1="1.85" y1="-0.95" x2="1.85" y2="0.95" width="0.1" layer="39"/>
+<wire x1="1.85" y1="0.95" x2="-1.95" y2="0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="0.95" x2="-1.95" y2="-0.95" width="0.1" layer="39"/>
+<wire x1="-1.95" y1="-0.95" x2="1.85" y2="-0.95" width="0.1" layer="39"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="RESC0805_N" urn="urn:adsk.eagle:package:2593736/1" type="box" library_version="8">
+<description>&lt;b&gt;0805&lt;/b&gt;chip&lt;p&gt;
+
+0805 (imperial)&lt;br/&gt;
+2012 (metric)&lt;br/&gt;
+IPC Nominal Density</description>
+<packageinstances>
+<packageinstance name="RESC0805_N"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1747,6 +1793,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="POPULARITY" value="64" x="45.847" y="23.241" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="44.577" y="20.066" size="1.27" layer="27"/>
 </element>
+<element name="C2" library="Nordic_nRF" library_urn="urn:adsk.eagle:library:169009" package="RESC0805_N" package3d_urn="urn:adsk.eagle:package:2593736/1" value="" x="42.164" y="12.192" smashed="yes" rot="MR0">
+<attribute name="NAME" x="43.164" y="13.692" size="1.27" layer="26" rot="MR0"/>
+<attribute name="VALUE" x="43.164" y="9.692" size="1.27" layer="28" rot="MR0"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -1778,6 +1828,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="JP2" pad="1"/>
 <contactref element="JP1" pad="1"/>
 <contactref element="JP3" pad="1"/>
+<contactref element="C2" pad="2"/>
 </signal>
 <signal name="VCC">
 <contactref element="IC1" pad="8"/>
@@ -1801,14 +1852,18 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="JP4" pad="1"/>
 <wire x1="45.847" y1="23.241" x2="45.847" y2="20.711" width="0.508" layer="1"/>
 <wire x1="45.847" y1="20.711" x2="45.846" y2="20.71" width="0.508" layer="1"/>
-<wire x1="43.39" y1="9.89" x2="43.39" y2="16.974" width="0.508" layer="16"/>
 <wire x1="45.846" y1="19.43" x2="45.846" y2="20.71" width="0.508" layer="16"/>
-<wire x1="45.846" y1="19.43" x2="43.39" y2="16.974" width="0.508" layer="16"/>
-<wire x1="43.39" y1="16.974" x2="39.37" y2="12.954" width="0.508" layer="16"/>
+<wire x1="45.846" y1="19.43" x2="43.434" y2="17.018" width="0.508" layer="16"/>
+<wire x1="43.264" y1="16.848" x2="39.37" y2="12.954" width="0.508" layer="16"/>
 <wire x1="35.56" y1="12.954" x2="34.29" y2="11.684" width="0.508" layer="16"/>
 <wire x1="34.29" y1="11.684" x2="34.29" y2="8.89" width="0.508" layer="16"/>
 <wire x1="39.37" y1="12.954" x2="35.56" y2="12.954" width="0.508" layer="16"/>
 <wire x1="5.08" y1="25.4" x2="5.08" y2="19.558" width="0.508" layer="1"/>
+<contactref element="C2" pad="1"/>
+<wire x1="43.39" y1="9.89" x2="43.39" y2="12.066" width="0.508" layer="16"/>
+<wire x1="43.39" y1="12.066" x2="43.264" y2="12.192" width="0.508" layer="16"/>
+<wire x1="43.264" y1="12.192" x2="43.264" y2="16.848" width="0.508" layer="16"/>
+<wire x1="43.264" y1="16.848" x2="43.434" y2="17.018" width="0.508" layer="16"/>
 </signal>
 <signal name="NEODATA">
 <contactref element="R2" pad="1"/>
