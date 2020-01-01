@@ -24,6 +24,7 @@ ATEMmin AtemSwitcher;
 void(* reboot) (void) = 0;
 
 void setup() {
+  delay(100);
   pinMode(4,OUTPUT);
   digitalWrite(4,HIGH);
   pinMode(10,OUTPUT);
@@ -39,11 +40,6 @@ void setup() {
     ; // wait for serial port to connect. Needed for native USB port only
   }
 
-  doInit();
-}
-
-void doInit() {
-  
   lcd.init();
   lcd.backlight();
   lcd.clear();
@@ -60,7 +56,7 @@ void doInit() {
   statusLed.clear();
   statusLed.show();
 
-  XBee.write("L");
+//  XBee.write("L");
   setAll(tallyUnit[0].Color(128,0,0));
 
   IPAddress ip(EEPROM.read(0), EEPROM.read(1), EEPROM.read(2), EEPROM.read(3));
@@ -92,7 +88,7 @@ void doInit() {
     }
   }
  
-  XBee.write("T");
+//  XBee.write("T");
   setAll(tallyUnit[0].Color(0,128,0));
   
   // print local IP address:
@@ -114,7 +110,7 @@ void doInit() {
   AtemSwitcher.serialOutput(1);
   AtemSwitcher.connect();
 
-  XBee.write("B");
+//  XBee.write("B");
   setAll(tallyUnit[0].Color(0,0,128));
 
   delay(2000);
@@ -129,20 +125,18 @@ void doInit() {
 
   delay(2000);
 
-  XBee.write("C");
+//  XBee.write("C");
   setAll(tallyUnit[0].Color(0,0,0));
 
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("0|1 2 3 4 5 6 7 8 9");
   lcd.setCursor(0,2);
-  lcd.print("1|0 1 2 R");
+  lcd.print("1|0 1 2");
 }
 
 bool haveDefinedMaxCameras = false;
 void loop() {
-  handleSerialConfig();
-  
   AtemSwitcher.runLoop();
 
   if(haveDefinedMaxCameras == false) {
@@ -151,7 +145,9 @@ void loop() {
     if(numberOfTallyLights > MAX_TALLY_LIGHTS) {
       numberOfTallyLights = MAX_TALLY_LIGHTS;
     }
-    haveDefinedMaxCameras = true;
+    if(numberOfTallyLights != 0) {
+      haveDefinedMaxCameras = true;
+    }
   }
 
   bool showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
@@ -160,17 +156,18 @@ void loop() {
   int opDimmer = map(analogRead(OP_DIMMER_PIN), 0, 1023, 0, 255);
 
   for (uint8_t i = 0; i < numberOfTallyLights; i++) {
-    setTalleyLight(i, showPreviewToTalent, talentDimmer, opDimmer);
-  }
-}
-
-void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, int opBrightness) {
-  int tally = AtemSwitcher.getTallyByIndexTallyFlags(camera);
-
-  if(camera + 1 == REMOTE_CAMERA) {
-    setRemoteTally(tally, showPreviewToTalent);
+    tallyStatus[i] = AtemSwitcher.getTallyByIndexTallyFlags(i);
   }
   
+  for (uint8_t i = 0; i < numberOfTallyLights; i++) {
+    setTalleyLight(i, tallyStatus[i], showPreviewToTalent, talentDimmer, opDimmer);
+    broadcastCamStatus(i, tallyStatus[i], showPreviewToTalent);
+  }
+
+  handleSerialConfig();
+}
+
+void setTalleyLight(uint8_t camera, int tally, bool showPreviewToTalent, int talentBrightness, int opBrightness) {  
   if(camera > 9) {
     switch(camera) {
       case 10:
@@ -219,42 +216,66 @@ void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, 
   tallyUnit[camera].show();
 }
 
-unsigned long time_now = 0;
-void setRemoteTally(int tally, bool showPreviewToTalent) {
-  // Only running the XBee at 9600baud, so adding a delay to the remote communication
-  // so we don't overload the serial connection.
-  if(millis() > time_now + 100) {
-    time_now = millis();
-    
-    lcd.setCursor(8,3);
-    
+void broadcastCamStatus(uint8_t camera, int tally, bool showPreviewToTalent) {
+  delay(50);
+    byte camStatus = 0b00000000;    
+    // camStatus bit assignments:
+    // 0 - Preview
+    // 1 - Live
+    // 2 - Show preview to talent
+    // 3-7 - Unused
+
+    if(showPreviewToTalent == true) {
+      bitWrite(camStatus, 2, 1);
+    } else {
+      bitWrite(camStatus, 2, 0);
+    }
     switch(tally) {
       case 1:
         // Live
-        lcd.print("L");
-        XBee.write('L');
+        bitWrite(camStatus, 1, 1);
         break;
       case 2:
         // Preview
-        if(showPreviewToTalent == true) {
-          lcd.print("P");
-          XBee.write('T');
-        } else {
-          lcd.print("p");
-          XBee.write('P');
-        }
+        bitWrite(camStatus, 0, 1);
         break;
       case 3:
         // Both
-        lcd.print("B");
-        XBee.write('L');
+        bitWrite(camStatus, 0, 1);
+        bitWrite(camStatus, 1, 1);
         break;
       default:
-        lcd.print(" ");
-        XBee.write('C');
         break;
     }
-  }
+
+    byte packet[] = { camera, camStatus, 0xff };
+//Serial.println((int) packet[0]);
+//Serial.print(bitRead(packet[0], 7));
+//Serial.print(bitRead(packet[0], 6));
+//Serial.print(bitRead(packet[0], 5));
+//Serial.print(bitRead(packet[0], 4));
+//Serial.print(bitRead(packet[0], 3));
+//Serial.print(bitRead(packet[0], 2));
+//Serial.print(bitRead(packet[0], 1));
+//Serial.println(bitRead(packet[0], 0));
+//Serial.print(bitRead(packet[1], 7));
+//Serial.print(bitRead(packet[1], 6));
+//Serial.print(bitRead(packet[1], 5));
+//Serial.print(bitRead(packet[1], 4));
+//Serial.print(bitRead(packet[1], 3));
+//Serial.print(bitRead(packet[1], 2));
+//Serial.print(bitRead(packet[1], 1));
+//Serial.println(bitRead(packet[1], 0));
+//Serial.print(bitRead(packet[2], 7));
+//Serial.print(bitRead(packet[2], 6));
+//Serial.print(bitRead(packet[2], 5));
+//Serial.print(bitRead(packet[2], 4));
+//Serial.print(bitRead(packet[2], 3));
+//Serial.print(bitRead(packet[2], 2));
+//Serial.print(bitRead(packet[2], 1));
+//Serial.println(bitRead(packet[2], 0));
+//Serial.println();
+    XBee.write(packet, 3);
 }
 
 void setAll(uint32_t color) {
@@ -331,7 +352,6 @@ void parseNewConfig() {
     case 'A':
       sprintf(output, "New ATEM Switcher IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
       Serial.println(output);
-      lcd.
       EEPROM.update(8, configIp[0]);
       EEPROM.update(9, configIp[1]);
       EEPROM.update(10, configIp[2]);

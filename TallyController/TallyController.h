@@ -18,6 +18,7 @@ byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x04 };
 #define LED_COUNT           2   // 1 for operator, 1 for talent
 int numberOfTallyLights = 8;    // Sane default value (number for ATEM Television Studio)
 #define MAX_TALLY_LIGHTS    12  // Maximum number of tally lights the tally controller shield supports.
+int tallyStatus[MAX_TALLY_LIGHTS];  // an array to store the current tally status.
 
 // Used for configuration via serial.
 const byte numChars = 16;
