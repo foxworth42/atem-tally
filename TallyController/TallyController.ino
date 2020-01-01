@@ -331,7 +331,6 @@ void parseNewConfig() {
     case 'A':
       sprintf(output, "New ATEM Switcher IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
       Serial.println(output);
-      lcd.
       EEPROM.update(8, configIp[0]);
       EEPROM.update(9, configIp[1]);
       EEPROM.update(10, configIp[2]);
