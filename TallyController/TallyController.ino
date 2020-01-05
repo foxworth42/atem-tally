@@ -151,7 +151,9 @@ void loop() {
     if(numberOfTallyLights > MAX_TALLY_LIGHTS) {
       numberOfTallyLights = MAX_TALLY_LIGHTS;
     }
-    haveDefinedMaxCameras = true;
+    if(numberOfTallyLights != 0) {
+      haveDefinedMaxCameras = true;
+    }
   }
 
   bool showPreviewToTalent = digitalRead(TALENT_PREVIEW_PIN);
