@@ -23,7 +23,7 @@ For `tally-controller-shield-smd.brd`
 |Controller Shield PCB|1|Can have board fabbed anywhere.|[Link](https://oshpark.com/shared_projects/vglxha97)|
 |Freetronics EtherMEGA|1|Arduino Mega + Ethernet bundle.  I do not recommend using the Mega ETH from RobotDyn.|[Link](https://www.freetronics.com.au/products/ethermega-arduino-mega-2560-compatible-with-onboard-ethernet)|
 |SN75174N RS485 Quad Line Driver|3| |[Link](https://www.mouser.com/ProductDetail/595-SN75174N)|
-|LM2596 DC/DC buck converters|2|Comes in a 6 pack.  I used 1 for the main 5v for the project, and the other just for powering the Ethermega|[Link](https://www.amazon.com/gp/product/B01GJ0SC2C/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1)|
+|LM2596 DC/DC buck converters|2|I used 1 for the main 5v for the project, and the other just for powering the Ethermega|[Link](https://www.amazon.com/dp/B06XZ1DKF2/ref=cm_sw_em_r_mt_dp_U_vQXREb0CJX45Z)|
 |Molex 22-23-2021 2-pin header|4| |[Link](https://www.mouser.com/ProductDetail/538-22-23-2021)|
 |Molex 22-23-2031 3-pin header|3| |[Link](https://www.mouser.com/ProductDetail/538-22-23-2031)|
 |Molex 22-23-2041 4-pin header|2| |[Link](https://www.mouser.com/ProductDetail/538-22-23-2041)|
