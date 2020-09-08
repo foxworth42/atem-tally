@@ -66,6 +66,7 @@ void doInit() {
   IPAddress ip(EEPROM.read(0), EEPROM.read(1), EEPROM.read(2), EEPROM.read(3));
   IPAddress netmask(EEPROM.read(4), EEPROM.read(5), EEPROM.read(6), EEPROM.read(7));
   IPAddress switcherIp(EEPROM.read(8), EEPROM.read(9), EEPROM.read(10), EEPROM.read(11));
+  remoteCameraNumber = EEPROM.read(12);
   
   Serial.println("Initialize Ethernet:");
   lcd.print("Init Ethernet");
@@ -124,8 +125,14 @@ void doInit() {
   lcd.print("ATEM IP Address:");
   lcd.setCursor(0,1);
   lcd.print(switcherIp);
+  lcd.setCursor(0,2);
+  lcd.print("Remote Camera #:");
+  lcd.setCursor(0,3);
+  lcd.print(remoteCameraNumber);
   Serial.print("ATEM IP Address: ");
   Serial.println(switcherIp);
+  Serial.print("Remote Camera #:");
+  Serial.println(remoteCameraNumber);
 
   delay(2000);
 
@@ -136,7 +143,9 @@ void doInit() {
   lcd.setCursor(0,0);
   lcd.print("0|1 2 3 4 5 6 7 8 9");
   lcd.setCursor(0,2);
-  lcd.print("1|0 1 2 R");
+  lcd.print("1|0 1 2 R   RmtCam#");
+  lcd.setCursor(12,3);
+  lcd.print(String(remoteCameraNumber));
 }
 
 bool haveDefinedMaxCameras = false;
@@ -169,7 +178,7 @@ void loop() {
 void setTalleyLight(int camera, bool showPreviewToTalent, int talentBrightness, int opBrightness) {
   int tally = AtemSwitcher.getTallyByIndexTallyFlags(camera);
 
-  if(camera + 1 == REMOTE_CAMERA) {
+  if(camera + 1 == remoteCameraNumber) {
     setRemoteTally(tally, showPreviewToTalent);
   }
   
@@ -294,52 +303,59 @@ void parseNewConfig() {
   boolean nextCharIsNum = false;
   int configIp[4] = { 0, 0, 0, 0 };
   int nextOctet = 0;
-  for( unsigned int a = 0; a < sizeof(receivedChars); a = a + 1 )
-  {
-    if(a==0) {
-      nextCharIsNum = true;
-      continue;
-    }
-    if(receivedChars[a] == '.') {
-      nextCharIsNum = true;
-      continue;
-    }
-    if(nextCharIsNum == true) {
-      int octet = atoi(&receivedChars[a]);
-      configIp[nextOctet] = octet;
-      nextOctet = nextOctet + 1;
-      nextCharIsNum = false;
-    }
-  }
-
   char output[40];
-  switch(receivedChars[0]) {
-    case 'I':
-      sprintf(output, "New IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
-      Serial.println(output);
-      EEPROM.update(0, configIp[0]);
-      EEPROM.update(1, configIp[1]);
-      EEPROM.update(2, configIp[2]);
-      EEPROM.update(3, configIp[3]);
-      break;
-    case 'N':
-      sprintf(output, "New Netmask: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
-      Serial.println(output);
-      EEPROM.update(4, configIp[0]);
-      EEPROM.update(5, configIp[1]);
-      EEPROM.update(6, configIp[2]);
-      EEPROM.update(7, configIp[3]);
-      break;
-    case 'A':
-      sprintf(output, "New ATEM Switcher IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
-      Serial.println(output);
-      EEPROM.update(8, configIp[0]);
-      EEPROM.update(9, configIp[1]);
-      EEPROM.update(10, configIp[2]);
-      EEPROM.update(11, configIp[3]);
-      break;
-    default:
-      Serial.println("Unknown config parameter");
+  
+  if(receivedChars[0] == 'R') {
+    sprintf(output, "Remote camera set to: %u", atoi(&receivedChars[1]));
+    Serial.println(output);
+    EEPROM.update(12, atoi(&receivedChars[1]));
+  } else {  
+    for( unsigned int a = 0; a < sizeof(receivedChars); a = a + 1 )
+    {
+      if(a==0) {
+        nextCharIsNum = true;
+        continue;
+      }
+      if(receivedChars[a] == '.') {
+        nextCharIsNum = true;
+        continue;
+      }
+      if(nextCharIsNum == true) {
+        int octet = atoi(&receivedChars[a]);
+        configIp[nextOctet] = octet;
+        nextOctet = nextOctet + 1;
+        nextCharIsNum = false;
+      }
+    }
+  
+    switch(receivedChars[0]) {
+      case 'I':
+        sprintf(output, "New IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+        Serial.println(output);
+        EEPROM.update(0, configIp[0]);
+        EEPROM.update(1, configIp[1]);
+        EEPROM.update(2, configIp[2]);
+        EEPROM.update(3, configIp[3]);
+        break;
+      case 'N':
+        sprintf(output, "New Netmask: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+        Serial.println(output);
+        EEPROM.update(4, configIp[0]);
+        EEPROM.update(5, configIp[1]);
+        EEPROM.update(6, configIp[2]);
+        EEPROM.update(7, configIp[3]);
+        break;
+      case 'A':
+        sprintf(output, "New ATEM Switcher IP: %u.%u.%u.%u", configIp[0], configIp[1], configIp[2], configIp[3]);
+        Serial.println(output);
+        EEPROM.update(8, configIp[0]);
+        EEPROM.update(9, configIp[1]);
+        EEPROM.update(10, configIp[2]);
+        EEPROM.update(11, configIp[3]);
+        break;
+      default:
+        Serial.println("Unknown config parameter");
+    }
   }
 
   Serial.println("Resetting");
